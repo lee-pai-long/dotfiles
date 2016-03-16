@@ -1,0 +1,69 @@
+"*":
+  "exception-reporting":
+    userId: "c1faf14c-ac05-8a88-e5c3-31e6940a6606"
+  welcome:
+    showOnStartup: false
+  editor:
+    invisibles: {}
+    tabLength: 4
+    backUpBeforeSaving: true
+    tabType: "soft"
+    fontSize: 16
+  core:
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax-dark"
+    ]
+    autoHideMenuBar: true
+    disabledPackages: [
+      "live-doc-viewer"
+      "unity-shader-files"
+      "language-gitignore"
+      "atom-perl-prove"
+      "change-case"
+    ]
+  minimap: {}
+  "header-42": {}
+  "live-doc-viewer":
+    command1: {}
+    command2: {}
+    command3: {}
+    command4: {}
+    command5: {}
+  "atom-perl-prove": {}
+  "linter-perl": {}
+  linter:
+    errorPanelHeight: 119
+  "git-log": {}
+  "file-header":
+    realname: "LEE PAI LONG "
+    email: "lee-pai-long@users.noreply.github.com"
+    username: "lpl"
+    autoUpdateEnabled: false
+  "linter-flake8":
+    ignoreErrorCodes: [
+      "D203"
+    ]
+  "atom-beautify":
+    _analyticsUserId: "3d85720d-ce50-460c-a74f-873b14c96b81"
+  "atom-material-ui":
+    fonts: {}
+    colors:
+      abaseColor:
+        red: 239
+        green: 90
+        blue: 41
+        alpha: 1
+      accentColor:
+        red: 119
+        green: 183
+        blue: 83
+        alpha: 1
+      genAccent: true
+    ui:
+      panelShadows: true
+      panelContrast: true
+    tabs: {}
+    treeView:
+      compactList: true
+  pacmanfy: {}
