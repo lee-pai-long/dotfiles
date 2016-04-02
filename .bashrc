@@ -20,13 +20,17 @@ if [ -f ~/.config/exercism/exercism_completion.bash ]; then
 	. ~/.config/exercism/exercism_completion.bash
 fi
 
-PATH="$HOME/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
-export GOPATH=$HOME/.go
+export GOPATH=/$HOME/.go
 
+# Python virtualenvwrapper utils
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects/python
 source /usr/local/bin/virtualenvwrapper.sh
+
+export SALT_CONFIG_DIR=$HOME/salt/etc
+
+if [ -d $HOME/.bash_function ]; then
+    for file in $HOME/.bash_function/*.sh; do
+        source $file
+    done
+fi

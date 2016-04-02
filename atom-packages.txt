@@ -13,9 +13,15 @@ color-picker
 file-header
 file-icons
 git-log
+language-conky
 language-docker
 language-generic-config
 language-gitignore
+language-ini
+language-lua
+language-perl-template-toolkit
+language-salt
+language-sql-mysql
 linter
 linter-docker
 linter-flake8
@@ -24,6 +30,7 @@ live-doc-viewer
 markdown-themeable-pdf
 md5
 minimap
+my-theme-syntax
 perldoc
 project-manager
 unity-shader-files

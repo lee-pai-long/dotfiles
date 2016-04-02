@@ -12,7 +12,7 @@
   core:
     themes: [
       "atom-material-ui"
-      "atom-material-syntax-dark"
+      "one-dark-syntax"
     ]
     autoHideMenuBar: true
     disabledPackages: [
@@ -22,6 +22,7 @@
       "atom-perl-prove"
       "change-case"
     ]
+    openEmptyEditorOnStart: false
   minimap: {}
   "header-42": {}
   "live-doc-viewer":
@@ -33,17 +34,18 @@
   "atom-perl-prove": {}
   "linter-perl": {}
   linter:
-    errorPanelHeight: 119
+    errorPanelHeight: 101
   "git-log": {}
   "file-header":
-    realname: "LEE PAI LONG "
-    email: "lee-pai-long@users.noreply.github.com"
-    username: "lpl"
+    realname: "Saidina MOHAMED ALI "
+    email: "saidina.mohamed-ali@fraudbuster.mobi"
+    username: "sma"
     autoUpdateEnabled: false
   "linter-flake8":
     ignoreErrorCodes: [
       "D203"
     ]
+    maxLineLength: 200
   "atom-beautify":
     _analyticsUserId: "3d85720d-ce50-460c-a74f-873b14c96b81"
   "atom-material-ui":
@@ -67,3 +69,10 @@
     treeView:
       compactList: true
   pacmanfy: {}
+  "autocomplete-python": {}
+".salt.source":
+  editor:
+    tabLength: 2
+".source.yaml":
+  editor:
+    tabLength: 2
