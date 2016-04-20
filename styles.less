@@ -1,0 +1,54 @@
+/*************************************************************************
+    Atom style config, original location :  ~/.atom/styles.less
+
+    Author: Lee Pai Long <lee-pai-long@users.noreply.github.com>
+    Date:   2016-04-20 16:53:22
+    Last modified by Lee Pai Long on 2016-04-20 17:48:45
+    License: WTFPL <http://www.wtfpl.net/>
+**************************************************************************/
+
+@white-5-percent-dark : darken(white, 5%);
+
+atom-workspace {
+  color: @white-5-percent-dark;
+}
+
+atom-text-editor {
+    color: @white-5-percent-dark;
+}
+.tab-bar .tab {
+  color: @white-5-percent-dark;
+}
+
+atom-text-editor::shadow .gutter {
+    color: lighten(#444, 50%);
+}
+
+atom-text-editor::shadow .gutter .line-number.cursor-line {
+    color: lighten(#ef5a29, 5%);
+    font-weight: bold;
+}
+
+// Makes the cursor pulse instead of blink
+atom-text-editor::shadow {
+  .cursor {
+    transition: opacity 0.5s;
+    border-color: lighten(#ef5a29, 5%);
+  }
+}
+
+.tree-view .project-root >
+.header span {
+  color: @white-5-percent-dark;
+  font-weight: bold;
+}
+
+.tree-view .project-root >
+.header.selected::before {
+  color: @white-5-percent-dark;
+}
+
+.tree-view .project-root >
+.header::before {
+  color: @white-5-percent-dark;
+}

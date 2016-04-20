@@ -1,0 +1,17 @@
+# ------------------ Keybinding config for atom ----------------------------------
+#               original location :  ~/.atom/keymap.cson
+# Author: Lee Pai Long <lee-pai-long@users.noreply.github.com>
+# Date:   2016-04-20 16:38:03
+# Last modified by Lee Pai Long on 2016-04-20 18:00:14
+# License: WTFPL <http://www.wtfpl.net/>
+# --------------------------------------------------------------------------------
+
+'atom-text-editor':
+  # Keybidding to imdone plugin
+  'alt-t': 'imdone-atom:tasks'
+
+  # Resolve keybinding conflit for key-binding-resolver
+  'ctrl-alt-k': 'key-binding-resolver:toggle'
+
+  # resolve not working mac os keybinding for file-header
+  'ctrl-shift-h': 'file-header:add'
