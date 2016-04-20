@@ -1,3 +1,10 @@
+# --------------------------------------------------------------------------------
+# Author: Lee Pai Long <lee-pai-long@users.noreply.github.com>
+# Date:   2016-04-02 03:06:59
+# Last modified by Lee Pai Long on 2016-04-20 17:57:44
+# License: WTFPL <http://www.wtfpl.net/>
+# --------------------------------------------------------------------------------
+
 #default word color
 #regexp=[\w.,\:\-_/]+
 regexp=.+

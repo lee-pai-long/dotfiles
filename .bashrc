@@ -1,3 +1,10 @@
+# --------------------------------------------------------------------------------
+# Author: Lee Pai Long <lee-pai-long@users.noreply.github.com>
+# Date:   2016-04-02 03:05:41
+# Last modified by Lee Pai Long on 2016-04-20 17:57:12
+# License: WTFPL <http://www.wtfpl.net/>
+# --------------------------------------------------------------------------------
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth

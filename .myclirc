@@ -1,4 +1,10 @@
-# vi: ft=dosini
+# --------------------------------------------------------------------------------
+# Author: Lee Pai Long <lee-pai-long@users.noreply.github.com>
+# Date:   2016-04-02 03:09:38
+# Last modified by Lee Pai Long on 2016-04-20 17:58:36
+# License: WTFPL <http://www.wtfpl.net/>
+# --------------------------------------------------------------------------------
+
 [main]
 
 # Enables context sensitive auto-completion. If this is disabled the all

@@ -1,3 +1,11 @@
+" -------------------------------------------------------------------------------------------
+" Author: Lee Pai Long <lee-pai-long@users.noreply.github.com>
+" Date:   2016-04-02 03:13:38
+" Last modified by Lee Pai Long on 2016-04-20 17:41:38
+" License: WTFPL <http://www.wtfpl.net/>
+" -------------------------------------------------------------------------------------------
+
+
 set nocompatible              " required
 filetype off                  " required
 
@@ -24,7 +32,7 @@ set foldlevel=99
 " Enable folding with the spacebar
 nnoremap <space> za
 
-" The initial command, set foldmethod=indent, creates folds based upon line indents. 
+" The initial command, set foldmethod=indent, creates folds based upon line indents.
 " This however often creates more folds that you wanted
 " SimpylFold rectify that
 Plugin 'tmhedberg/SimpylFold'
@@ -62,9 +70,9 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " python with virtualenv support
-" This determines if you are running inside a virtualenv, 
-" and then switches to that specific virtualenv 
-" and sets up your system path 
+" This determines if you are running inside a virtualenv,
+" and then switches to that specific virtualenv
+" and sets up your system path
 " so that YouCompleteMe will find the appropriate site packages
 
 py << EOF
@@ -117,7 +125,7 @@ set nu
 "to perform basic git commands without leaving vim
 Plugin 'tpope/vim-fugitive'
 
-" Powerline : status bar that displays things 
+" Powerline : status bar that displays things
 " like the current virtualenv, git branch, files being edited, and much more.
 " doc : http://powerline.readthedocs.org/en/latest/
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}

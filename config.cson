@@ -1,3 +1,12 @@
+# ------------------------ Atom Global config ------------------------------------
+#           original location :  ~/.atom/grammar-config/yaml.cson
+#
+# Author: Lee Pai Long <lee-pai-long@users.noreply.github.com>
+# Date:   2016-04-20 17:37:21
+# Last modified by Lee Pai Long on 2016-04-20 17:53:00
+# License: WTFPL <http://www.wtfpl.net/>
+# --------------------------------------------------------------------------------
+
 "*":
   "exception-reporting":
     userId: "c1faf14c-ac05-8a88-e5c3-31e6940a6606"
@@ -9,6 +18,7 @@
     backUpBeforeSaving: true
     tabType: "soft"
     fontSize: 16
+    preferredLineLength: 143
   core:
     themes: [
       "atom-material-ui"
@@ -18,11 +28,31 @@
     disabledPackages: [
       "live-doc-viewer"
       "unity-shader-files"
-      "language-gitignore"
       "atom-perl-prove"
       "change-case"
+      "keybinding-resolver"
+      "language-c"
+      "language-clojure"
+      "language-csharp"
+      "language-go"
+      "language-java"
+      "language-make"
+      "language-mustache"
+      "language-objective-c"
+      "language-php"
+      "language-ruby-on-rails"
+      "language-toml"
+      "language-xml"
+      "metrics"
+      "open-on-github"
+      "welcome"
+      "atom-beautify"
+      "markdown-themeable-pdf"
     ]
     openEmptyEditorOnStart: false
+    packagesWithKeymapsDisabled: [
+      "imdone-atom"
+    ]
   minimap: {}
   "header-42": {}
   "live-doc-viewer":
@@ -35,15 +65,20 @@
   "linter-perl": {}
   linter:
     errorPanelHeight: 101
+    showErrorPanel: false
   "git-log": {}
   "file-header":
-    realname: "Saidina MOHAMED ALI "
-    email: "saidina.mohamed-ali@fraudbuster.mobi"
-    username: "sma"
-    autoUpdateEnabled: false
+    realname: "Lee Pai Long"
+    dateTimeFormat: "YYYY-MM-DD HH:mm:ss"
+    autoAddingHeaderEnabled: false
+    email: "lee-pai-long@users.noreply.github.com"
+    license: "WTFPL <http://www.wtfpl.net/>"
+    numOfEmptyLinesAfterNewHeader: 1
+    configDirPath: "/home/sma/myconfigs/atom_file-header"
   "linter-flake8":
     ignoreErrorCodes: [
       "D203"
+      "E402"
     ]
     maxLineLength: 200
   "atom-beautify":
@@ -70,6 +105,12 @@
       compactList: true
   pacmanfy: {}
   "autocomplete-python": {}
+  "spell-check": {}
+  "git-diff":
+    showIconsInEditorGutter: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "imdone-atom": {}
 ".salt.source":
   editor:
     tabLength: 2
