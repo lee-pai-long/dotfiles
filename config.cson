@@ -1,12 +1,3 @@
-# ------------------------ Atom Global config ------------------------------------
-#           original location :  ~/.atom/grammar-config/yaml.cson
-#
-# Author: Lee Pai Long <lee-pai-long@users.noreply.github.com>
-# Date:   2016-04-20 17:37:21
-# Last modified by Lee Pai Long on 2016-04-20 17:53:00
-# License: WTFPL <http://www.wtfpl.net/>
-# --------------------------------------------------------------------------------
-
 "*":
   "exception-reporting":
     userId: "c1faf14c-ac05-8a88-e5c3-31e6940a6606"
@@ -111,9 +102,10 @@
   "tree-view":
     hideVcsIgnoredFiles: true
   "imdone-atom": {}
-".salt.source":
+  "atom-html-preview": {}
+".source.yaml":
   editor:
     tabLength: 2
-".source.yaml":
+".salt.source":
   editor:
     tabLength: 2

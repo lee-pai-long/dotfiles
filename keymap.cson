@@ -15,3 +15,6 @@
 
   # resolve not working mac os keybinding for file-header
   'ctrl-shift-h': 'file-header:add'
+
+  # change Atom HTML Preview keybinding to not conflit with file-header
+  'alt-shift-h': 'atom-html-preview:toggle'
