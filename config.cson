@@ -39,10 +39,13 @@
       "welcome"
       "atom-beautify"
       "markdown-themeable-pdf"
+      "autoclose-html"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
       "imdone-atom"
+      "atom-html-preview"
+      "bracket-matcher"
     ]
   minimap: {}
   "header-42": {}
@@ -103,9 +106,13 @@
     hideVcsIgnoredFiles: true
   "imdone-atom": {}
   "atom-html-preview": {}
-".source.yaml":
+  "autoclose-html": {}
+".html.text.tt":
+  editor:
+    preferredLineLength: 143
+".salt.source":
   editor:
     tabLength: 2
-".salt.source":
+".source.yaml":
   editor:
     tabLength: 2

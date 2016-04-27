@@ -18,3 +18,11 @@
 
   # change Atom HTML Preview keybinding to not conflit with file-header
   'alt-shift-h': 'atom-html-preview:toggle'
+
+  # -- bracket-matcher --------------------
+  # easier html/xml closing tag
+  'alt-end': 'bracket-matcher:close-tag'
+  'ctrl-m': 'bracket-matcher:go-to-matching-bracket'
+  'ctrl-]': 'bracket-matcher:remove-brackets-from-selection'
+  'ctrl-alt-m': 'bracket-matcher:select-inside-brackets'
+  'ctrl-alt-backspace': 'bracket-matcher:remove-matching-brackets'

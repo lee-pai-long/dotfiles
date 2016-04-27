@@ -24,3 +24,5 @@ alias egrep='egrep --color=auto'
 alias ....='cd ../..'
 alias mkvenv='mkvirtualenv --python=/usr/bin/python3 -a ${PWD} ${PWD##*/} --no-site-packages'
 alias mkvenv3.4='mkvirtualenv --python=/usr/bin/python3.4 -a ${PWD} ${PWD##*/} --no-site-packages'
+# TODO: escape properly
+#alias hist='history | awk -F ' ' '{ printf("\033[38;5;9m%s \033[38;5;33m%s \033[38;5;11m%s ",$1,$2,$3); $1=$2=$3=""; gsub(/^[ \t]+/,"",$0); print "\033[38;5;15m"$0; }'

@@ -5,6 +5,15 @@
 # License: WTFPL <http://www.wtfpl.net/>
 # --------------------------------------------------------------------------------
 
+# ----------------------- color settings -----------------------------------------
+orange="\e[38;5;202m"
+white="\e[38;5;15m"
+green="\e[38;5;41m"
+blue="\e[38;5;33m"
+yellow="\e[38;5;11m"
+red="\e[38;5;9m"
+
+# ---------------------- history settings -----------------------------------------
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -16,17 +25,24 @@ shopt -s histappend
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# Two lines prompt
-PS1="\[\033[38;5;202m\][\t]\[\033[38;5;15m\] \[\033[38;5;41m\]\u\[\033[38;5;15m\] @ \[\033[38;5;33m\]\H\[\033[38;5;15m\] : \[\033[38;5;11m\]\w\[\033[38;5;15m\]\n\\$ "
+#Add date in history
+export HISTTIMEFORMAT="%d/%m/%y %T "
 
-#Get a container IP using container ID
+# ----------------------------- Two lines prompt ------------------------------------
+# [11:07:45] user @ host : /path/
+# $ command
+PS1="$orange[\t] $green\u $white@ $blue\H $white: $yellow\w$white\n\\$ "
+# --------------------------------------------------------------------------------
+
+# Get a container IP using container ID
 docker-ip() { sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"; }
 
-#Load exercism.io bash completion
+# Load exercism.io bash completion
 if [ -f ~/.config/exercism/exercism_completion.bash ]; then
 	. ~/.config/exercism/exercism_completion.bash
 fi
 
+# Go utils
 export GOPATH=/$HOME/.go
 
 # Python virtualenvwrapper utils
@@ -41,3 +57,6 @@ if [ -d $HOME/.bash_function ]; then
         source $file
     done
 fi
+
+# Change the default connect URI in libvirt
+export LIBVIRT_DEFAULT_URI="qemu:///session"
