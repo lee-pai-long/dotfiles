@@ -99,6 +99,8 @@
     command3: {}
     command4: {}
     command5: {}
+  "markdown-preview":
+    useGitHubStyle: true
   minimap: {}
   pacmanfy: {}
   "spell-check": {}
