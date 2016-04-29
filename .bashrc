@@ -13,13 +13,22 @@ blue="\e[38;5;33m"
 yellow="\e[38;5;11m"
 red="\e[38;5;9m"
 
-# ---------------------- history settings -----------------------------------------
+# ---------------------- history settings -------------------------------------------
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+
+# After each command, append to the history file and reread it
+# history -c clears the history of the running session.
+# This will reduce the history counter by the amount of $HISTSIZE.
+# history -r read the contents of $HISTFILE and insert them in to the current running session history.
+# this will raise the history counter by the amount of lines in $HISTFILE.
+# In result history number may look weird on current session sometimes but after closing all session the order seems to get back correctly
+# NOTE: If the same command is execute on multiple session, the ignoredubs directive doesn't work
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -32,7 +41,7 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 # [11:07:45] user @ host : /path/
 # $ command
 PS1="$orange[\t] $green\u $white@ $blue\H $white: $yellow\w$white\n\\$ "
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------
 
 # Get a container IP using container ID
 docker-ip() { sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"; }
