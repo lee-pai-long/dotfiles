@@ -1,20 +1,31 @@
 "*":
-  "exception-reporting":
-    userId: "c1faf14c-ac05-8a88-e5c3-31e6940a6606"
-  welcome:
-    showOnStartup: false
-  editor:
-    invisibles: {}
-    tabLength: 4
-    backUpBeforeSaving: true
-    tabType: "soft"
-    fontSize: 16
-    preferredLineLength: 143
+  "atom-beautify":
+    _analyticsUserId: "3d85720d-ce50-460c-a74f-873b14c96b81"
+  "atom-html-preview": {}
+  "atom-material-ui":
+    colors:
+      abaseColor:
+        red: 239
+        green: 90
+        blue: 41
+        alpha: 1
+      accentColor:
+        red: 119
+        green: 183
+        blue: 83
+        alpha: 1
+      genAccent: true
+    fonts: {}
+    tabs: {}
+    treeView:
+      compactList: true
+    ui:
+      panelContrast: true
+      panelShadows: true
+  "atom-perl-prove": {}
+  "autoclose-html": {}
+  "autocomplete-python": {}
   core:
-    themes: [
-      "atom-material-ui"
-      "one-dark-syntax"
-    ]
     autoHideMenuBar: true
     disabledPackages: [
       "live-doc-viewer"
@@ -37,7 +48,6 @@
       "metrics"
       "open-on-github"
       "welcome"
-      "atom-beautify"
       "markdown-themeable-pdf"
       "autoclose-html"
     ]
@@ -47,66 +57,55 @@
       "atom-html-preview"
       "bracket-matcher"
     ]
-  minimap: {}
-  "header-42": {}
-  "live-doc-viewer":
-    command1: {}
-    command2: {}
-    command3: {}
-    command4: {}
-    command5: {}
-  "atom-perl-prove": {}
-  "linter-perl": {}
-  linter:
-    errorPanelHeight: 101
-    showErrorPanel: false
-  "git-log": {}
+    themes: [
+      "atom-material-ui"
+      "one-dark-syntax"
+    ]
+  editor:
+    backUpBeforeSaving: true
+    invisibles: {}
+    preferredLineLength: 143
+    tabLength: 4
+    tabType: "soft"
+  "exception-reporting":
+    userId: "c1faf14c-ac05-8a88-e5c3-31e6940a6606"
   "file-header":
-    realname: "Lee Pai Long"
-    dateTimeFormat: "YYYY-MM-DD HH:mm:ss"
     autoAddingHeaderEnabled: false
+    configDirPath: "/home/sma/myconfigs/atom_file-header"
+    dateTimeFormat: "YYYY-MM-DD HH:mm:ss"
     email: "lee-pai-long@users.noreply.github.com"
     license: "WTFPL <http://www.wtfpl.net/>"
     numOfEmptyLinesAfterNewHeader: 1
-    configDirPath: "/home/sma/myconfigs/atom_file-header"
+    realname: "Lee Pai Long"
+    username: "sma"
+  "git-diff":
+    showIconsInEditorGutter: true
+  "git-log": {}
+  "header-42": {}
+  "imdone-atom": {}
+  linter:
+    errorPanelHeight: 101
+    showErrorPanel: false
   "linter-flake8":
     ignoreErrorCodes: [
       "D203"
       "E402"
     ]
     maxLineLength: 200
-  "atom-beautify":
-    _analyticsUserId: "3d85720d-ce50-460c-a74f-873b14c96b81"
-  "atom-material-ui":
-    fonts: {}
-    colors:
-      abaseColor:
-        red: 239
-        green: 90
-        blue: 41
-        alpha: 1
-      accentColor:
-        red: 119
-        green: 183
-        blue: 83
-        alpha: 1
-      genAccent: true
-    ui:
-      panelShadows: true
-      panelContrast: true
-    tabs: {}
-    treeView:
-      compactList: true
+  "linter-perl": {}
+  "live-doc-viewer":
+    command1: {}
+    command2: {}
+    command3: {}
+    command4: {}
+    command5: {}
+  minimap: {}
   pacmanfy: {}
-  "autocomplete-python": {}
   "spell-check": {}
-  "git-diff":
-    showIconsInEditorGutter: true
   "tree-view":
     hideVcsIgnoredFiles: true
-  "imdone-atom": {}
-  "atom-html-preview": {}
-  "autoclose-html": {}
+  welcome:
+    showOnStartup: false
 ".html.text.tt":
   editor:
     preferredLineLength: 143
