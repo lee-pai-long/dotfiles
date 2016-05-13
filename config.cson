@@ -1,6 +1,7 @@
 "*":
   "atom-beautify":
-    _analyticsUserId: "3d85720d-ce50-460c-a74f-873b14c96b81"
+    general:
+      _analyticsUserId: "3d85720d-ce50-460c-a74f-873b14c96b81"
   "atom-html-preview": {}
   "atom-material-ui":
     colors:
@@ -26,7 +27,6 @@
   "autoclose-html": {}
   "autocomplete-python": {}
   core:
-    autoHideMenuBar: true
     disabledPackages: [
       "live-doc-viewer"
       "unity-shader-files"
@@ -50,12 +50,14 @@
       "welcome"
       "markdown-themeable-pdf"
       "autoclose-html"
+      "w3c-validation"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
       "imdone-atom"
       "atom-html-preview"
       "bracket-matcher"
+      "encoding-selector"
     ]
     themes: [
       "atom-material-ui"
@@ -103,9 +105,28 @@
     useGitHubStyle: true
   minimap: {}
   pacmanfy: {}
+  "project-view": {}
   "spell-check": {}
+  "todo-show":
+    findTheseTodos: [
+      "FIXME:SMA"
+      "TODO:SMA"
+      "CHANGED:SMA"
+      "XXX:SMA"
+      "IDEA:SMA"
+      "HACK:SMA"
+      "NOTE:SMA"
+      "REVIEW:SMA"
+    ]
+    findUsingRegex: "/\\b(${TODOS})[;.,]?\\d*($|\\s.*$|\\(.*$)/g"
+    openListInDirection: "ontop"
+    sortAscending: false
+    sortBy: "Type"
   "tree-view":
     hideVcsIgnoredFiles: true
+  "w3c-validation":
+    hideOnNoErrors: true
+    useFoldModeAsDefault: true
   welcome:
     showOnStartup: false
 ".html.text.tt":
