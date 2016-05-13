@@ -51,6 +51,15 @@
       "markdown-themeable-pdf"
       "autoclose-html"
       "w3c-validation"
+      "atom-html-preview"
+      "compare-files"
+      "image-view"
+      "symbols-view"
+      "about"
+      "git-log"
+      "scroll-sync"
+      "bookmarks"
+      "atom-yamljson"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
