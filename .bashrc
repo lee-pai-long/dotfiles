@@ -83,8 +83,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 export SALT_CONFIG_DIR=$HOME/salt/etc
 
-if [ -d $HOME/.bash_function ]; then
-    for file in $HOME/.bash_function/*.sh; do
+if [ -d $HOME/.bash_functions ]; then
+    for file in $HOME/.bash_functions/*.sh; do
         source $file
     done
 fi
