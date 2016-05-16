@@ -90,4 +90,4 @@ if [ -d $HOME/.bash_function ]; then
 fi
 
 # Change the default connect URI in libvirt
-export LIBVIRT_DEFAULT_URI="qemu:///session"
+export LIBVIRT_DEFAULT_URI="qemu:///system"
