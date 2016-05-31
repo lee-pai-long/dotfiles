@@ -52,14 +52,13 @@
       "autoclose-html"
       "w3c-validation"
       "atom-html-preview"
-      "compare-files"
-      "image-view"
       "symbols-view"
       "about"
       "git-log"
       "scroll-sync"
       "bookmarks"
       "atom-yamljson"
+      "file-header"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -75,7 +74,7 @@
   editor:
     backUpBeforeSaving: true
     invisibles: {}
-    preferredLineLength: 143
+    preferredLineLength: 154
     tabLength: 4
     tabType: "soft"
   "exception-reporting":
@@ -96,7 +95,6 @@
   "imdone-atom": {}
   linter:
     errorPanelHeight: 101
-    showErrorPanel: false
   "linter-flake8":
     ignoreErrorCodes: [
       "D203"
@@ -113,6 +111,8 @@
   "markdown-preview":
     useGitHubStyle: true
   minimap: {}
+  "opened-files":
+    removeOnClose: true
   pacmanfy: {}
   "project-view": {}
   "spell-check": {}
