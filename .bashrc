@@ -45,7 +45,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-#Add date in history
+# Add date in history
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
 # ----------------------- hstr(hh) config options (https://github.com/dvorka/hstr) -----------------------------------------------------------
@@ -62,6 +62,11 @@ export HH_PROMPT="$USER @ $HOSTNAME : $PWD $ "
 
 # if this is interactive shell, then bind hh to Ctrl-h instead of Ctrl-r, this allow us to have the two features available
 if [[ $- =~ .*i.* ]]; then bind '"\C-h": "\C-a hh \C-j"'; fi
+
+# ----------------------- alias definitions ----------------------------------------------------------------------------------------------------
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # --------------------------------------------------------------------------------------------------------------------------------------------
 
