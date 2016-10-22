@@ -1,10 +1,3 @@
-# --------------------------------------------------------------------------------
-# Author: Lee Pai Long <lee-pai-long@users.noreply.github.com>
-# Date:   2016-04-02 03:09:38
-# Last modified by Lee Pai Long on 2016-04-20 17:58:36
-# License: WTFPL <http://www.wtfpl.net/>
-# --------------------------------------------------------------------------------
-
 [main]
 
 # Enables context sensitive auto-completion. If this is disabled the all
@@ -60,34 +53,31 @@ wider_completion_menu = False
 # \h - Hostname of the server
 # \d - Database name
 # \n - Newline
-prompt = '\u @ \h - [\d]> '
-
-# Custom colors for the completion menu, toolbar, etc.
+prompt = "\u @ \h - [\d]> "
 [colors]
 # Completion menus.
-Token.Menu.Completions.Completion.Current = 'bg:#00aaaa #000000'
-Token.Menu.Completions.Completion = 'bg:#008888 #ffffff'
-Token.Menu.Completions.MultiColumnMeta = 'bg:#aaffff #000000'
-Token.Menu.Completions.ProgressButton = 'bg:#003333'
-Token.Menu.Completions.ProgressBar = 'bg:#00aaaa'
+Token.Menu.Completions.Completion.Current = "bg:#00aaaa #000000"
+Token.Menu.Completions.Completion = "bg:#008888 #ffffff"
+Token.Menu.Completions.MultiColumnMeta = "bg:#aaffff #000000"
+Token.Menu.Completions.ProgressButton = "bg:#003333"
+Token.Menu.Completions.ProgressBar = "bg:#00aaaa"
 
 # Selected text.
-Token.SelectedText = '#ffffff bg:#6666aa'
+Token.SelectedText = "#ffffff bg:#6666aa"
 
 # Search matches. (reverse-i-search)
-Token.SearchMatch = '#ffffff bg:#4444aa'
-Token.SearchMatch.Current = '#ffffff bg:#44aa44'
+Token.SearchMatch = "#ffffff bg:#4444aa"
+Token.SearchMatch.Current = "#ffffff bg:#44aa44"
 
 # The bottom toolbar.
-Token.Toolbar.Off = 'bg:#222222 #888888'
-Token.Toolbar.On = 'bg:#222222 #ffffff'
+Token.Toolbar.Off = "bg:#222222 #888888"
+Token.Toolbar.On = "bg:#222222 #ffffff"
 
 # Search/arg/system toolbars.
-Token.Toolbar.Search = 'noinherit bold'
-Token.Toolbar.Search.Text = 'nobold'
-Token.Toolbar.System = 'noinherit bold'
-Token.Toolbar.Arg = 'noinherit bold'
-Token.Toolbar.Arg.Text = 'nobold'
-
-# Favorite queries.
+Token.Toolbar.Search = noinherit bold
+Token.Toolbar.Search.Text = nobold
+Token.Toolbar.System = noinherit bold
+Token.Toolbar.Arg = noinherit bold
+Token.Toolbar.Arg.Text = nobold
 [favorite_queries]
+purge = delete from `Campaigns`; delete from `Jobs`;

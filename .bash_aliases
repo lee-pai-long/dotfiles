@@ -1,35 +1,89 @@
-# --------------------------------------------------------------------------------
-# Author: Lee Pai Long <lee-pai-long@users.noreply.github.com>
-# Date:   2016-04-20 17:26:59
-# Last modified by Lee Pai Long on 2016-04-20 17:56:33
-# License: WTFPL <http://www.wtfpl.net/>
-# --------------------------------------------------------------------------------
-
-alias ll='ls -AlhF'
+# TODO: Put in files inside a .bash_aliases.d
+# -------------- ls -------------------------------------
+alias ll='ls -AlhFt'
 alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls --color=auto'
+
+# -------------- grep ----------------------------------------------------------------------------
 alias grep='grep --colour=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
+# ------------- apt -------------------------------------------------------------------------------
 alias acs='apt-cache search '
 alias agi='apt-get install '
-alias agu='apt-get update'
-alias sudo='sudo '
+alias agd='apt-get update'
+alias agg='apt-get upgrade'
 alias aar='add-apt-repository '
 alias agp='apt-get purge '
-alias cinnamon_restart='killall cinnamon && export DISPLAY=:0.0 && cinnamon --replace &'
-alias fuck='sudo $(history -p \!\!)'
 alias aga='apt-get autoremove'
-alias rm='trash'
-alias ..='cd ..'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+alias acp='apt-cache policy '
+
+# ----------- sudo --------------------------------------------------------------------------------
+alias s='sudo '
+alias fuck='sudo $(history -p \!\!)'
+
+# ------ linux mint -------------------------------------------------------------------------------
+alias cinnamon_restart='killall cinnamon && export DISPLAY=:0.0 && cinnamon --replace &'
+
+# -------------- Pegasus Shortcuts ----------------------------------------------------------------
+alias gosmb='cd ~/projects/fraudbuster/simbuster'
+alias gotc='cd ~/projects/fraudbuster/testcalls'
+alias gocl='cd ~/vagrant/controlLayer/'
+alias gopjt='cd ~/projects'
+# --------- cd ------------------------------------------------------------------------------------
 alias ....='cd ../..'
-alias mkvenv='mkvirtualenv --python=/usr/bin/python3 -a ${PWD} ${PWD##*/} --no-site-packages'
-alias mkvenv3.4='mkvirtualenv --python=/usr/bin/python3.4 -a ${PWD} ${PWD##*/} --no-site-packages'
-# TODO: escape properly
-#alias hist='history | awk -F ' ' '{ printf("\033[38;5;9m%s \033[38;5;33m%s \033[38;5;11m%s ",$1,$2,$3); $1=$2=$3=""; gsub(/^[ \t]+/,"",$0); print "\033[38;5;15m"$0; }'
+alias ..='cd ..'
+
+# --------------- Virtualenvwrapper ---------------------------------------------------------------
+alias mkv='mkvirtualenv '
+alias rmv='rmvirtualenv '
+alias mkp='mkproject '
+alias mktv='mktmpenv '
+alias lsv='lsvirtualenv '
+alias shwv='showvirtualenv '
+alias cpv='cpvirtualenv '
+alias allv='allvirtualenv '
+alias cdv='cdvirtualenv '
+alias add2v='add2virtualenv '
+alias wpv='wipeenv '
+alias cdp='cdproject '
+
+# ------------- Vagrant ----------------------------------------------------------------------------
+alias vti='vagrant init '
+alias vtu='vagrant up '
+alias vtsh='vagrant ssh '
+alias vts='vagrant suspend '
+alias vtr='vagrant reload '
+alias vth='vagrant halt '
+alias vtd='vagrant destroy '
+
+# ------------- MyCLI ------------------------------------------------------------------------------
+alias mytc='mycli -u root -h testcalls-pegasus -D TestCalls '
+
+# ------------- Vim --------------------------------------------------------------------------------
+alias v='vim '
+alias vr='vim -R '
+alias vs='sudo vim '
+
+# ------------- Nginx ------------------------------------------------------------------------------
+alias nxt='sudo nginx -t && sudo service nginx '
+
+# ------------- Git --------------------------------------------------------------------------------
+alias gi='git init '
+alias ga='git add '
+alias gta='git add .'
+alias gs='git status '
+alias gc='git commit '
+alias gd='git diff '
+alias gco='git checkout '
+alias gl='git lg '
+alias gal='git aliases'
+alias gms='git ms ' # show commit message
+
+# ------------ FraudBuster -------------------------------------------------------------------------
+alias bart='ssh bart'
+
+# ------------ Diff --------------------------------------------------------------------------------
+alias diff='colordiff '

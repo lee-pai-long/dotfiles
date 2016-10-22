@@ -1,11 +1,3 @@
-# ------------------ Keybinding config for atom ----------------------------------
-#               original location :  ~/.atom/keymap.cson
-# Author: Lee Pai Long <lee-pai-long@users.noreply.github.com>
-# Date:   2016-04-20 16:38:03
-# Last modified by Lee Pai Long on 2016-04-20 18:00:14
-# License: WTFPL <http://www.wtfpl.net/>
-# --------------------------------------------------------------------------------
-
 'atom-text-editor':
   # Keybidding to imdone plugin
   'alt-t': 'imdone-atom:tasks'
@@ -30,5 +22,12 @@
   # -- atom edit text keybinding ----------------------------------------------------------
   # uppercase selected text (disable encoding-selector keybinding fist!)
   'alt-u': 'editor:upper-case'
+
   # lowercase selected text
   'alt-l': 'editor:lower-case'
+
+  # select word
+  'alt-w': 'editor:select-word'
+
+  # comment select lines
+  'alt-shift-C': 'editor:toggle-line-comment'
