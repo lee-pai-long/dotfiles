@@ -1,16 +1,16 @@
 # TODO: Put in files inside a .bash_aliases.d
-# -------------- ls -------------------------------------
+# -------------- ls -----------------------------------------------------------------------------
 alias ll='ls -AlhFt'
 alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls --color=auto'
 
-# -------------- grep ----------------------------------------------------------------------------
+# -------------- grep ---------------------------------------------------------------------------
 alias grep='grep --colour=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# ------------- apt -------------------------------------------------------------------------------
+# ------------- apt ------------------------------------------------------------------------------
 alias acs='apt-cache search '
 alias agi='apt-get install '
 alias agd='apt-get update'
@@ -20,23 +20,25 @@ alias agp='apt-get purge '
 alias aga='apt-get autoremove'
 alias acp='apt-cache policy '
 
-# ----------- sudo --------------------------------------------------------------------------------
+# ----------- sudo -------------------------------------------------------------------------------
 alias s='sudo '
 alias fuck='sudo $(history -p \!\!)'
 
-# ------ linux mint -------------------------------------------------------------------------------
+# ------ linux mint ------------------------------------------------------------------------------
 alias cinnamon_restart='killall cinnamon && export DISPLAY=:0.0 && cinnamon --replace &'
 
-# -------------- Pegasus Shortcuts ----------------------------------------------------------------
+# -------------- Pegasus Shortcuts ---------------------------------------------------------------
+# TODO: Put it in a pegasus file
 alias gosmb='cd ~/projects/fraudbuster/simbuster'
 alias gotc='cd ~/projects/fraudbuster/testcalls'
 alias gocl='cd ~/vagrant/controlLayer/'
 alias gopjt='cd ~/projects'
-# --------- cd ------------------------------------------------------------------------------------
+
+# --------- cd -----------------------------------------------------------------------------------
 alias ....='cd ../..'
 alias ..='cd ..'
 
-# --------------- Virtualenvwrapper ---------------------------------------------------------------
+# --------------- Virtualenvwrapper --------------------------------------------------------------
 alias mkv='mkvirtualenv '
 alias rmv='rmvirtualenv '
 alias mkp='mkproject '
@@ -50,7 +52,7 @@ alias add2v='add2virtualenv '
 alias wpv='wipeenv '
 alias cdp='cdproject '
 
-# ------------- Vagrant ----------------------------------------------------------------------------
+# ------------- Vagrant --------------------------------------------------------------------------
 alias vti='vagrant init '
 alias vtu='vagrant up '
 alias vtsh='vagrant ssh '
@@ -59,18 +61,19 @@ alias vtr='vagrant reload '
 alias vth='vagrant halt '
 alias vtd='vagrant destroy '
 
-# ------------- MyCLI ------------------------------------------------------------------------------
+# ------------- MyCLI ----------------------------------------------------------------------------
 alias mytc='mycli -u root -h testcalls-pegasus -D TestCalls '
 
-# ------------- Vim --------------------------------------------------------------------------------
+# ------------- Vim ------------------------------------------------------------------------------
 alias v='vim '
 alias vr='vim -R '
 alias vs='sudo vim '
 
-# ------------- Nginx ------------------------------------------------------------------------------
+# ------------- Nginx ----------------------------------------------------------------------------
 alias nxt='sudo nginx -t && sudo service nginx '
 
-# ------------- Git --------------------------------------------------------------------------------
+# ------------- Git ------------------------------------------------------------------------------
+# TODO: Replace all following aliases by git aliases and just add a alias g for git
 alias gi='git init '
 alias ga='git add '
 alias gta='git add .'
@@ -81,9 +84,21 @@ alias gco='git checkout '
 alias gl='git lg '
 alias gal='git aliases'
 alias gms='git ms ' # show commit message
+alias gpl='git pull '
+alias gps='git push '
+alias grm='git rm '
 
-# ------------ FraudBuster -------------------------------------------------------------------------
+# ------------ Libvirt ---------------------------------------------------------------------------
+alias vsrt='virsh start '
+alias smbd='simbusterV5-dev'
+
+# ------------ FraudBuster -----------------------------------------------------------------------
 alias bart='ssh bart'
+alias stand='ssh stcsbp'
+alias dev7='ssh dev7'
 
-# ------------ Diff --------------------------------------------------------------------------------
+# ------------ Diff ------------------------------------------------------------------------------
 alias diff='colordiff '
+
+# --------- Neovim -------------------------------------------------------------------------------
+alias nvm='nvim '

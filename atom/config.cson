@@ -21,7 +21,6 @@
     useSnippets: "all"
   core:
     audioBeep: false
-    autoHideMenuBar: true
     disabledPackages: [
       "language-c"
       "language-clojure"
@@ -55,7 +54,7 @@
   editor:
     backUpBeforeSaving: true
     invisibles: {}
-    preferredLineLength: 154
+    preferredLineLength: 99
     tabLength: 4
     tabType: "soft"
   "exception-reporting":

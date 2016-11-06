@@ -1,10 +1,4 @@
-" -------------------------------------------------------------------------------------------
-" Author: Lee Pai Long <lee-pai-long@users.noreply.github.com>
-" Date:   2016-04-02 03:13:38
-" Last modified by Lee Pai Long on 2016-04-20 17:41:38
-" License: WTFPL <http://www.wtfpl.net/>
-" -------------------------------------------------------------------------------------------
-
+" TODO: Need vim perl support!
 
 set nocompatible              " required
 filetype off                  " required
@@ -12,6 +6,22 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
+set encoding=utf-8
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" turn on line number
+set nu
+
+set softtabstop=4
+set tabstop=4
+set shiftwidth=4
+
+" Enable folding with the spacebar
+nnoremap <space> za
 
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -21,22 +31,63 @@ Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
-" Enable folding with the spacebar
-nnoremap <space> za
+" Color Schemes
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
 
 " The initial command, set foldmethod=indent, creates folds based upon line indents.
 " This however often creates more folds that you wanted
 " SimpylFold rectify that
 Plugin 'tmhedberg/SimpylFold'
 
+" Autoindent conforming to PEP8 standards
+Plugin 'vim-scripts/indentpython.vim'
+
+" Auto-complete for python
+Plugin 'Valloric/YouCompleteMe'
+
+" Syntax Checking/Highlighting
+Plugin 'scrooloose/syntastic'
+
+" PEP8 syntax checking
+Plugin 'nvie/vim-flake8'
+
+" proper file tree
+Plugin 'scrooloose/nerdtree'
+
+" use tabs
+Plugin 'jistr/vim-nerdtree-tabs'
+
+" to search for basically anything from VIM
+Plugin 'kien/ctrlp.vim'
+
+"to perform basic git commands without leaving vim
+Plugin 'tpope/vim-fugitive'
+
+" Powerline : status bar that displays things
+" like the current virtualenv, git branch, files being edited, and much more.
+" doc : http://powerline.readthedocs.org/en/latest/
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+" Syntax highlighting, matching rules and mappings for Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+" a bit of logic to define which scheme to use based upon the VIM mode
+if has('gui_running')
+	set background=dark
+	colorscheme solarized
+	call togglebg#map("<F5>")
+else
+	colorscheme zenburn
+endif
+
+" Python settings ------------------------------------------------------
 " proper PEP8 indentation
 au BufNewFile,BufRead *.py set tabstop=4
 au BufNewFile,BufRead *.py set softtabstop=4
@@ -51,30 +102,11 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set softtabstop=2
     \ set shiftwidth=2
 
-" Autoindent conforming to PEP8 standards
-Plugin 'vim-scripts/indentpython.vim'
-
-" Flag Unnecessary Whitespace
-" Error 'E28' : No such highlight group name: BadWhitespace
-"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
-set encoding=utf-8
-
-" Auto-complete for python
-Plugin 'Valloric/YouCompleteMe'
-
-" ensures that the autocomplete window goes away when you’re done with it
-let g:ycm_autoclose_preview_window_after_completion=1
-
-" defines a shortcut for goto definition
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 " python with virtualenv support
 " This determines if you are running inside a virtualenv,
 " and then switches to that specific virtualenv
 " and sets up your system path
 " so that YouCompleteMe will find the appropriate site packages
-
 py << EOF
 import os
 import sys
@@ -84,65 +116,29 @@ if 'VIRTUAL_ENV' in os.environ:
    execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-" Syntax Checking/Highlighting
-Plugin 'scrooloose/syntastic'
-
-" PEP8 syntax checking
-Plugin 'nvie/vim-flake8'
-
 " make python code look pretty
 let python_highlight_all=1
 syntax on
 
-" Color Schemes
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
+" Vagrant settings -----------------------------------------------------------
+au BufNewFile,BufRead Vagrantfile set filetype=ruby
 
-" a bit of logic to define which scheme to use based upon the VIM mode
-if has('gui_running')
-	set background=dark
-	colorscheme solarized
-	call togglebg#map("<F5>")
-else
-	colorscheme zenburn
-endif
+" Markdown settings ----------------------------------------------------------
+au BufNewFile,BufReadPost *.md set filetype=markdown
 
-" proper file tree
-Plugin 'scrooloose/nerdtree'
+" SaltStack settings ---------------------------------------------------------
+" configure tab to two space for salt states files
+au BufRead,BufNewFile *.sls set tabstop=2 expandtab
 
-" use tabs
-Plugin 'jistr/vim-nerdtree-tabs'
+" Autocomplete settiings -----------------------------------------------------
+" ensures that the autocomplete window goes away when you’re done with it
+let g:ycm_autoclose_preview_window_after_completion=1
 
+" defines a shortcut for goto definition
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" NERDTree settings -----------------------------------------------------------
 "ignore .pyc files in NERDTree
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
-" to search for basically anything from VIM
-Plugin 'kien/ctrlp.vim'
-
-" turn on line number
-set nu
-
-"to perform basic git commands without leaving vim
-Plugin 'tpope/vim-fugitive'
-
-" Powerline : status bar that displays things
-" like the current virtualenv, git branch, files being edited, and much more.
-" doc : http://powerline.readthedocs.org/en/latest/
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-
 "let g:clang_user_options='|| exit 0'
-
-autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
-
-set softtabstop=4
-set tabstop=4
-set shiftwidth=4
-
-" Syntax highlighting, matching rules and mappings for Markdown
-" Plugin 'godlygeek/tabular'
-" Plugin 'plasticboy/vim-markdown'
-
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-" configure tab to two space for salt states files
-autocmd BufRead,BufNewFile *.sls set tabstop=2 expandtab

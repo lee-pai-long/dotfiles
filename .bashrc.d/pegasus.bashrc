@@ -26,7 +26,7 @@ export GOPATH=/$HOME/.go
 
 # Python virtualenvwrapper utils
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Projects/python
+export PROJECT_HOME=$HOME/projects/perso
 source /usr/local/bin/virtualenvwrapper.sh
 
 export SALT_CONFIG_DIR=$HOME/salt/etc
