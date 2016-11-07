@@ -140,7 +140,8 @@ au BufNewFile,BufRead *.py set fileformat=unix
 " make python code look pretty
 let python_highlight_all=1
 syntax on
-colorscheme onedark
+colorscheme zenburn
+highlight Normal ctermbg=NONE guibg=NONE
 
 " Vagrant settings -----------------------------------------------------------
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
@@ -161,7 +162,6 @@ autocmd VimEnter * wincmd p "Auto focus on file
 let g:nerdtree_tabs_autofind=1
 let g:nerdtree_tabs_autoclose=1
 let NERDTreeMinimalUI = 1 "Remove Help
-:hi Directory guifg=#FF0000 ctermfg=red
 autocmd bufenter * if (winnr("$") == 1
     \ && exists("b:NERDTree")
     \ && b:NERDTree.isTabTree()) | q | endif "Close NERDTree
@@ -178,7 +178,7 @@ let g:airline_left_sep = ' '
 let g:airline_left_alt_sep = '|'
 let g:airline_right_sep = ' '
 let g:airline_right_alt_sep = '|'
-let g:airline_theme= 'cobalt2'
+let g:airline_theme= 'zenburn'
 let g:airline_powerline_fonts=1
 
 
@@ -186,8 +186,8 @@ let g:airline_powerline_fonts=1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_python_flake8_args='--ignore=E501,E225,E251,E221'
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
+" let g:syntastic_python_flake8_args='--ignore=E501,E225,E251,E221'
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
