@@ -1,10 +1,3 @@
-# --------------------------------------------------------------------------------
-# Author: Lee Pai Long <lee-pai-long@users.noreply.github.com>
-# Date:   2016-04-02 03:13:00
-# Last modified by Lee Pai Long on 2016-04-20 17:59:11
-# License: WTFPL <http://www.wtfpl.net/>
-# --------------------------------------------------------------------------------
-
 # ~/.profile: executed by the command interpreter for login shells.
 # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
 # exists.
