@@ -1,0 +1,13 @@
+cd -
+git push origin master 
+git init
+vagrant halt
+vagrant halt && vagrant destroy
+git config -l
+deactivate 
+vagrant up
+git add .
+git log
+sudo apt-get update
+git status
+cd myconfigs/
