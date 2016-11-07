@@ -62,9 +62,7 @@ fi
 
 export BASHRC_D=$HOME/.bashrc.d
 if [ -d $BASHRC_D ]; then
-    for file in $BASHRC_D/*.bashrc; do
-        . $file
-    done
+        . $BASHRC_D/${HOSTNAME}.bashrc
 fi
 
 # set PATH so it includes user's private bin if it exists
