@@ -1,0 +1,33 @@
+[user]
+	email = mohamed.ali.saidina+github@gmail.com
+	name = lpl
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[alias]
+	a = add
+	aa = add --all
+	ci = commit
+	ca = commit -a
+	cm = commit -m
+	cmn = commit --no-verify
+	cmd = commit --amend
+	cmdn = commit --amend --no-verify
+	d = diff
+	ps = push
+	pl = pull
+	s = status
+	ss = status -sb
