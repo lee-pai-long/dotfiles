@@ -1,4 +1,3 @@
-# TODO: Put in files inside a .bash_aliases.d
 # -------------- ls -----------------------------------------------------------------------------
 alias ll='ls -AlhFt'
 alias la='ls -A'
@@ -27,12 +26,6 @@ alias fuck='sudo $(history -p \!\!)'
 # ------ linux mint ------------------------------------------------------------------------------
 alias cinnamon_restart='killall cinnamon && export DISPLAY=:0.0 && cinnamon --replace &'
 
-# -------------- Pegasus Shortcuts ---------------------------------------------------------------
-# TODO: Put it in a pegasus file
-alias gosmb='cd ~/projects/fraudbuster/simbuster'
-alias gotc='cd ~/projects/fraudbuster/testcalls'
-alias gocl='cd ~/vagrant/controlLayer/'
-alias gopjt='cd ~/projects'
 
 # --------- cd -----------------------------------------------------------------------------------
 alias ....='cd ../..'
@@ -53,13 +46,10 @@ alias wpv='wipeenv '
 alias cdp='cdproject '
 
 # ------------- Vagrant --------------------------------------------------------------------------
-alias vti='vagrant init '
-alias vtu='vagrant up '
-alias vtsh='vagrant ssh '
-alias vts='vagrant suspend '
-alias vtr='vagrant reload '
-alias vth='vagrant halt '
-alias vtd='vagrant destroy '
+alias vi='vagrant init '
+alias vu='vagrant up '
+alias vs='vagrant ssh '
+alias vh='vagrant halt '
 
 # ------------- MyCLI ----------------------------------------------------------------------------
 alias mytc='mycli -u root -h testcalls-pegasus -D TestCalls '
@@ -73,29 +63,7 @@ alias vs='sudo vim '
 alias nxt='sudo nginx -t && sudo service nginx '
 
 # ------------- Git ------------------------------------------------------------------------------
-# TODO: Replace all following aliases by git aliases and just add a alias g for git
-alias gi='git init '
-alias ga='git add '
-alias gta='git add .'
-alias gs='git status '
-alias gc='git commit '
-alias gd='git diff '
-alias gco='git checkout '
-alias gl='git lg '
-alias gal='git aliases'
-alias gms='git ms ' # show commit message
-alias gpl='git pull '
-alias gps='git push '
-alias grm='git rm '
-
-# ------------ Libvirt ---------------------------------------------------------------------------
-alias vsrt='virsh start '
-alias smbd='simbusterV5-dev'
-
-# ------------ FraudBuster -----------------------------------------------------------------------
-alias bart='ssh bart'
-alias stand='ssh stcsbp'
-alias dev7='ssh dev7'
+alias g='git '
 
 # ------------ Diff ------------------------------------------------------------------------------
 alias diff='colordiff '
