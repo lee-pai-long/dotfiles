@@ -1,0 +1,17 @@
+# Doc: https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+Metrics/LineLength:
+  Max: 89
+Metrics/BlockLength:
+  ExcludedMethods: ['configure', 'define']
+Style/EmptyLinesAroundAccessModifier:
+  Enabled: false
+Style/StringLiterals:
+  Enabled: false
+Style/WordArray:
+  Enabled: false
+Style/Next:
+  Enabled: false
+Style/AlignParameters:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
