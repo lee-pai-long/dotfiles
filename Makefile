@@ -31,7 +31,7 @@ help: ## Show this message.
 link: ## Create symlink for all files in $HOME.
 
 	@for f in `find $(FIND_PATTERN) -exec readlink -f {} \;`; \
-		do ln -sf $$f $(USER_HOME)/$$(basename $$f); \
+		do ln -sfT $$f $(USER_HOME)/$$(basename $$f); \
 	done
 
 clean: ## Remove  all symlink from $HOME.
