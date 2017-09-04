@@ -11,3 +11,4 @@ virt-addr() {
         | grep "`virsh dumpxml $VM | grep "mac address" | sed "s/.*'\(.*\)'.*/\1/g"`" \
         | awk '{ gsub(/[\(\)]/,"",$2); print $2 }'
 }
+export -f virt-addr

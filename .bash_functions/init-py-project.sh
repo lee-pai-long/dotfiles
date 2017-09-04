@@ -17,3 +17,4 @@ init-py-project() {
         workon $*
     fi
 }
+export -f init-py-project

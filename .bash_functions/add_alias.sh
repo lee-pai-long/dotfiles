@@ -34,3 +34,4 @@ function add_alias() {
     # add the alias in the user bash_aliases file
     echo "!!" >> /tmp/alias
 }
+export -f add_alias

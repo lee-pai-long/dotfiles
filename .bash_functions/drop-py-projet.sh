@@ -13,3 +13,4 @@ function drop-py-project() {
          rm -rf $PROJECT_HOME/$* $WORKON_HOME/$*
      fi
 }
+export -f drop-py-project

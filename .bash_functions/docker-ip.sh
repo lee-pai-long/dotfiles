@@ -4,3 +4,4 @@
 docker-ip() {
     docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@";
 }
+export -f docker-ip
