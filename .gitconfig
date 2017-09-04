@@ -29,5 +29,5 @@
 	d = diff
 	ps = push
 	pl = pull
-	s = status
-	ss = status -sb
+	ss = status
+	sb = status -sb
