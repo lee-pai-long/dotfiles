@@ -2,21 +2,41 @@
 	email = mohamed.ali.saidina+github@gmail.com
 	name = lpl
 [color]
-	ui = auto
+    ui = auto
+    showbranch = auto
 [color "branch"]
-	current = yellow bold
-	local = green bold
-	remote = cyan bold
+    current = yellow reverse
+    local = yellow
+    remote = green
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 [color "status"]
-	added = green bold
-	changed = yellow bold
-	untracked = red bold
+    added = green
+    changed = yellow
+    untracked = red
+[color "interactive"]
+    prompt = yellow
+    header = green
+    help = cyan
+    error = magenta
+[color "grep"]
+    context = white
+    filename = yellow
+    function = green
+    linenumber = cyan
+    match = yellow reverse
+    selected = normal
+    separator = magenta
+[push]
+    default = upstream
+
+[branch]
+    autosetuprebase = always
+[merge]
+    tool = meld
 [alias]
 	a = add
 	aa = add --all
@@ -31,3 +51,4 @@
 	pl = pull
 	ss = status
 	sb = status -sb
+	mt = mergetool
