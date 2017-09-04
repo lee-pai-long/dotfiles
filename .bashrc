@@ -61,9 +61,9 @@ if [ -d $BASH_FUNC_DIR ]; then
     done
 fi
 
-LOCAL_BASHRC='.local.bashrc'
+LOCAL_BASHRC="$HOME/.local.bashrc"
 if [ -f $LOCAL_BASHRC ]; then
-        source $LOCAL_BASHRC
+    source $LOCAL_BASHRC
 fi
 
 # set PATH so it includes user's private bin if it exists
