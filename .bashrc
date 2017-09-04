@@ -71,3 +71,7 @@ USER_BIN="$HOME/.bin"
 if [ -d $USER_BIN ] ; then
     export PATH="$USER_BIN:$PATH"
 fi
+
+# set vim as default editor.
+export VISUAL=vim
+export EDITOR="$VISUAL"
