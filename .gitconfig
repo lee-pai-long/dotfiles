@@ -52,3 +52,5 @@
 	ss = status
 	sb = status -sb
 	mt = mergetool
+    co = checkout
+    cb = checkout -b
