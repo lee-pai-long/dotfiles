@@ -1,4 +1,4 @@
 sleep 20s
 killall conky
-cd "/home/sma/projects/perso/dotfiles"
-conky -c "/home/sma/projects/perso/dotfiles/.conkyrc" &
+cd "$HOME/.conky"
+conky -c "$HOME/.conky/lpl-seamod.conf" &
