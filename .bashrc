@@ -4,17 +4,19 @@
 # ----------------------- color settings -----------------------------------------------
 #show color by for structure:
 # $ for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done
-orange="\e[38;05;202m"
-white="\e[38;05;15m"
-green="\e[38;05;41m"
-blue="\e[38;05;33m"
-yellow="\e[38;05;11m"
-red="\e[38;05;9m"
+or="\e[38;05;202m"
+wh="\e[38;05;15m"
+gr="\e[38;05;41m"
+bl="\e[38;05;33m"
+ye="\e[38;05;11m"
+re="\e[38;05;9m"
 
-# ----------------------------- Two lines prompt ---------------------------------------
-# [11:07:45] user @ host : /path/
+# ----------------------- prompt settings ----------------------------------------------
+# (venv)[11:07:45] user @ host : /path/ (git branch)
 # $ command
-PS1="$orange[\t] $green\u $white@ $blue\H $white: $yellow\w$white\n\\$ "
+# virtualenv is added by the bash function venv_prompt.
+ORIGINAL_PROMPT="$or[\t] $gr\u $wh@ $bl\H$wh: $ye\w$wh$(__git_ps1)\n\$ "
+
 
 # ---------------------- history settings ----------------------------------------------
 # don't put duplicate lines or lines starting with space in the history.
