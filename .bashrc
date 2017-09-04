@@ -63,6 +63,10 @@ if [ -d $BASH_FUNC_DIR ]; then
     done
 fi
 
+# Bash shell executes this function just before displaying the PS1 variable.
+# venv-prompt is loaded from a bash function.
+export PROMPT_COMMAND='venv-prompt'
+
 LOCAL_BASHRC="$HOME/.local.bashrc"
 if [ -f $LOCAL_BASHRC ]; then
     source $LOCAL_BASHRC

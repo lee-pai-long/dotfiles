@@ -13,6 +13,3 @@ function venv-prompt {
     PS1="$PROMPT"
 }
 export -f venv-prompt
-
-# Bash shell executes this function just before displaying the PS1 variable.
-export PROMPT_COMMAND='venv-prompt'
