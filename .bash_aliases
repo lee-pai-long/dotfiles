@@ -57,7 +57,6 @@ alias mytc='mycli -u root -h testcalls-pegasus -D TestCalls '
 # ------------- Vim --------------------------------------------------------------------
 alias v='vim '
 alias vr='vim -R '
-alias vs='sudo vim '
 
 # ------------- Nginx ------------------------------------------------------------------
 alias nxt='sudo nginx -t && sudo service nginx '
