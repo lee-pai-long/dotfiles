@@ -1,7 +1,7 @@
 # This function delete the directory given in argument,
 # then delete the virtualenv directory
 
-function droppyproject() {
+function drop_py_project() {
      # if we still in the project directory move to ~
      if [ $PWD = $* ]; then
         cd
@@ -11,5 +11,4 @@ function droppyproject() {
      else
          rm -rf $PROJECT_HOME/$* $WORKON_HOME/$*
      fi
-
 }
