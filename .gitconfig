@@ -32,11 +32,15 @@
     separator = magenta
 [push]
     default = upstream
-
 [branch]
     autosetuprebase = always
 [merge]
     tool = meld
+[log]
+	date = local
+[pretty]
+	custom = "%C(yellow)%h%Creset %Cblue(%an)%Creset \
+- %ad %Cgreen(%ar)%Creset -%C(yellow)%d%Creset %s"
 [alias]
 	a = add
 	aa = add --all
@@ -54,3 +58,4 @@
 	mt = mergetool
     co = checkout
     cb = checkout -b
+	lg = log --graph --decorate --pretty=custom
