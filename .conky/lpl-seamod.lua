@@ -13,67 +13,70 @@
 -- conkyrc_lunatico:  http://gnome-look.org/content/show.php?content=142884
 -- conkyrc_seamod:    http://seajey.deviantart.com/art/Conky-Seamod-v0-1-283461046
 --
-
 conky.config = {
-    background = yes,
-    update_interval = 1,
+	background = false,
+	update_interval = 1,
 
-    cpu_avg_samples = 1,
-    net_avg_samples = 2,
-    temperature_unit = celsius,
+	cpu_avg_samples = 1,
+	net_avg_samples = 2,
+	temperature_unit = 'celsius',
 
-    double_buffer = yes,
-    no_buffers = yes,
-    text_buffer_size = 2048,
+	double_buffer = true,
+	no_buffers = true,
+	text_buffer_size = 2048,
 
-    gap_x = 30,
-    gap_y = 70,
-    minimum_width = 300,
-    minimum_height = 900,
-    maximum_width = 350,
+	gap_x = 30,
+	gap_y = 70,
+	minimum_width = 300, minimum_height = 900,
+	maximum_width = 350,
 
-    own_window = yes,
-    own_window_type = desktop,
-    own_window_transparent = yes,
-    own_window_argb_visual = yes,
-    own_window_argb_visual = yes,
-    own_window_colour = 000000,
-    own_window_argb_value = 0,
-    own_window_hints = undecorate,sticky,skip_taskbar,skip_pager,below,
+	xinerama_head = 2,
 
-    border_inner_margin = 0,
-    border_outer_margin = 0,
-    alignment = top_right,
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_transparent = true,
+	own_window_argb_visual = true,
+	own_window_argb_visual = true,
+	own_window_colour = '#000000',
+	own_window_argb_value = 0,
+	own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
 
-    draw_shades = no,
-    draw_outline = no,
-    draw_borders = no,
-    draw_graph_borders = no,
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+	alignment = 'top_right',
 
-    override_utf8_locale = yes,
-    use_xft = yes,
-    font = 'caviar dreams:size=10',
-    xftalpha = 0.5,
-    uppercase = no,
 
-    -- Defining colors
-    default_color = FFFFFF,
-    -- Shades of Gray
-    color1 = '#DDDDDD',
-    color2 = '#AAAAAA',
-    color3 = '#888888',
-    -- Orange
-    color4 = '#EF5A29',
-    -- Green
-    color5 = '#77B753',
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
 
-    -- Header with base system info
-    own_window_argb_value = 0,
-    own_window_colour = 000000,
+	override_utf8_locale = true,
+	use_xft = true,
+	font = 'caviar dreams:size=10',
+	xftalpha = 0.5,
+	uppercase = false,
 
-    -- Loading lua script for drawning rings
-    lua_load = './lpl-seamod_rings.lua',
-    lua_draw_hook_post = main
+-- Defining colors
+	default_color = '#FFFFFF',
+-- Shades of Gray
+	color1 = '#DDDDDD',
+	color2 = '#AAAAAA',
+	color3 = '#888888',
+-- Orange
+	color4 = '#EF5A29',
+-- Green
+	color5 = '#77B753',
+
+-- Loading lua script for drawning rings
+	lua_load = './lpl-seamod_rings.lua',
+	lua_draw_hook_post = 'main',
+
+--# System information using conky capabilities
+
+-- Header with base system info
+	own_window_argb_value = 0,
+	own_window_colour = '#000000',
 };
 
 conky.text = [[
@@ -83,7 +86,7 @@ ${voffset -31}${offset 150}${font Ubuntu:size=10,weight:normal}${color1}${time %
 ${voffset 10}${font Ubuntu:size=30,weight:normal}${color1}${time %H}${color3}:${color1}${time %M}${color3}:${color4}${time %S}
 ${voffset -65}${offset 160}${font Ubuntu:size=10,weight:normal}${color1}Uptime: ${color5}$uptime
 
-# ${offset 15}${font Ubuntu:size=10,weight:normal}${color4}$sysname $kernel
+#${offset 15}${font Ubuntu:size=10,weight:normal}${color4}$sysname $kernel
 
 # Showing CPU Graph
 ${voffset 5}
@@ -96,7 +99,7 @@ ${offset 105}${font Ubuntu:size=10,weight:normal}${color2}${top name 3}${alignr}
 ${offset 105}${font Ubuntu:size=10,weight:normal}${color3}${top name 4}${alignr}${top cpu 4}%
 ${offset 105}${font Ubuntu:size=10,weight:normal}${color3}${top name 5}${alignr}${top cpu 5}%
 
-# Showing memory part with TOP 5
+#Showing memory part with TOP 5
 ${voffset 35}
 ${offset 235}${font Ubuntu:size=10,weight:normal}${color5}${mem}${color1} / ${color4}${memmax}${voffset -13}
 ${offset 90}${font Ubuntu:size=10,weight:bold}${color5}MEM${voffset 5}${color1}${hr 1}${voffset 10}
@@ -118,6 +121,7 @@ ${offset 15}${font Ubuntu:size=10,weight:normal}${color3}${top_io name 4}${align
 ${offset 15}${font Ubuntu:size=10,weight:normal}${color3}${top_io name 5}${alignr}read: ${top_io io_read 5} - write : ${top_io io_write 5}
 
 # Network
+
 ${font Ubuntu:size=10,weight:bold}${color5}NETWORK${color1}${hr 1}
 ${if_existing /proc/net/route eth0}
 	${voffset -40}${offset 210}${font Ubuntu:size=10,weight:normal}${color1}eth0: ${color4}${addr eth0}
@@ -134,5 +138,6 @@ ${if_existing /proc/net/route wlan0}
 	${offset 15}${color1}${font Ubuntu:size=9,weight:bold}Down: ${alignr}${font Ubuntu:size=9,weight:normal}$color5${downspeed wlan0} / $color1${totaldown wlan0}
 	${offset 15}${downspeedgraph wlan0 40,320 324D23 77B753 100 -l}
 	${color4}${hr 2}
+${endif}
 ${endif}
 ]];

@@ -1,6 +1,5 @@
-#!/usr/bin/env bash
 
-sleep 20s
+sleep 5s
 killall conky
 cd "$HOME/.conky"
-conky -c "$HOME/.conky/lpl-seamod.lua" &
+conky -c "$HOME/.conky/lpl-seamod.lua" -b
