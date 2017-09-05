@@ -1,41 +1,49 @@
 [user]
-	email = mohamed.ali.saidina+github@gmail.com
 	name = lpl
+	email = mohamed.ali.saidina+github@gmail.com
+[url "git@github.com:"]
+	insteadOf = gh:
+[url "git@gist.github.com:"]
+	insteadOf = gist:
+[core]
+	editor=vim
+	excludesfile = ~/.gitignore
+	autocrlf = input
 [color]
-    ui = auto
-    showbranch = auto
+	ui = auto
+	showbranch = auto
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 [color "status"]
-    added = green
-    changed = yellow
-    untracked = red
+	added = green
+	changed = yellow
+	untracked = red
 [color "interactive"]
-    prompt = yellow
-    header = green
-    help = cyan
-    error = magenta
+	prompt = yellow
+	header = green
+	help = cyan
+	error = magenta
 [color "grep"]
-    context = white
-    filename = yellow
-    function = green
-    linenumber = cyan
-    match = yellow reverse
-    selected = normal
-    separator = magenta
+	context = white
+	filename = yellow
+	function = green
+	linenumber = cyan
+	match = yellow reverse
+	selected = normal
+	separator = magenta
 [push]
-    default = upstream
+	default = upstream
 [branch]
-    autosetuprebase = always
+	autosetuprebase = always
 [merge]
-    tool = meld
+	tool = meld
 [log]
 	date = local
 [pretty]
@@ -56,6 +64,8 @@
 	ss = status
 	sb = status -sb
 	mt = mergetool
-    co = checkout
-    cb = checkout -b
+	co = checkout
+	cb = checkout -b
 	lg = log --graph --decorate --pretty=custom
+	tags = tag -l
+	this = !git init && git add . && git commit -m \"Initial commit.\"
