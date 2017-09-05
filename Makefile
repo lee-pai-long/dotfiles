@@ -36,4 +36,6 @@ link: ## Create symlink for all files in $HOME.
 
 clean: ## Remove  all symlink from $HOME.
 
-	@for f in `find $(FIND_PATTERN) -exec basename {} \;`; do rm -rf $(USER_HOME)/$$f; done
+	@for f in `find $(FIND_PATTERN) -exec basename {} \;`; \
+		do rm -rf $(USER_HOME)/$$f; \
+	done
