@@ -15,7 +15,7 @@ re="\e[38;05;9m"
 # (venv)[11:07:45] user @ host : /path/ (git branch)
 # $ command
 # virtualenv is added by the bash function venv_prompt.
-ORIGINAL_PROMPT="$or[\t] $gr\u $wh@ $bl\H$wh: $ye\w$wh$(__git_ps1)\n\$ "
+ORIGINAL_PROMPT="$or[\t] $gr\u $wh@ $bl\H$wh: $ye\w$wh\$(__git_ps1)\n\$ "
 
 
 # ---------------------- history settings ----------------------------------------------
