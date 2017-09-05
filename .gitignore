@@ -1,5 +1,5 @@
-idea/
+.idea
 .perl-version
 .perlcriticrc
-.vagrant/
+.vagrant
 _Deparsed_XSubs.pm
