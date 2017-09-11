@@ -15,8 +15,11 @@ re="\e[38;05;9m"
 # (venv)[11:07:45] user @ host : /path/ (git branch)
 # $ command
 # virtualenv is added by the bash function venv_prompt.
-ORIGINAL_PROMPT="$or[\t] $gr\u $wh@ $bl\H$wh: $ye\w$wh\$(__git_ps1)\n\$ "
-
+ORIGINAL_PROMPT="$or[\t] $gr\u $wh@ $bl\H$wh: $ye\w$wh\n\$ "
+if [ -n "$(type -t __git_ps1)" ]; then
+    ORIGINAL_PROMPT="$or[\t] $gr\u $wh@ $bl\H$wh: $ye\w$wh\$(__git_ps1)\n\$ "
+fi
+PS1=$ORIGINAL_PROMPT
 
 # ---------------------- history settings ----------------------------------------------
 # don't put duplicate lines or lines starting with space in the history.
@@ -61,11 +64,10 @@ if [ -d $BASH_FUNC_DIR ]; then
     for file in $BASH_FUNC_DIR/*.sh; do
         source $file
     done
+    # Bash shell executes this function just before displaying the PS1 variable.
+    # venv-prompt is loaded from a bash function.
+    export PROMPT_COMMAND='venv-prompt'
 fi
-
-# Bash shell executes this function just before displaying the PS1 variable.
-# venv-prompt is loaded from a bash function.
-export PROMPT_COMMAND='venv-prompt'
 
 LOCAL_BASHRC="$HOME/.local.bashrc"
 if [ -f $LOCAL_BASHRC ]; then
