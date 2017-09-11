@@ -79,10 +79,32 @@ conky.config = {
 	own_window_colour = '#000000',
 };
 
+-- Time formats
+-- %%    a literal %
+-- %a    locale's abbreviated weekday name (e.g., Sun)
+-- %A    locale's full weekday name (e.g., Sunday)
+-- %b    locale's abbreviated month name (e.g., Jan)
+-- %B    locale's full month name (e.g., January)
+-- %c    locale's date and time (e.g., Thu Mar 3 23:05:25 2005)
+-- %C    century; like %Y, except omit last two digits (e.g., 21)
+-- %d    day of month (e.g, 01)
+-- %D    date; same as %m/%d/%y
+-- %e    day of month, space padded; same as %_d but no leading 0
+-- %F    full date; same as %Y-%m-%d
+-- %g    last two digits of year of ISO week number (see %G)
+-- %G    year of ISO week number (see %V); normally useful only with %V
+-- %h    same as %b
+-- %H    hour (00..23)
+-- %I    hour (01..12)
+-- %j    day of year (001..366)
+-- %k    hour ( 0..23)
+-- %l    hour ( 1..12)
+-- %m    month (01..12)
+-- %M    minute (00..59
 conky.text = [[
 ${voffset -5}${offset 80}${font Ubuntu:size=10,weight:bold}${color1}${desktop}
 ${voffset -10}${font Ubuntu:size=15,weight:bold}${color5}$nodename ${color4}${hr 2}
-${voffset -31}${offset 150}${font Ubuntu:size=10,weight:normal}${color1}${time %A %d %B %Y}
+${voffset -31}${offset 210}${font Ubuntu:size=10,weight:normal}${color1}${time %A %D}
 ${voffset 10}${font Ubuntu:size=30,weight:normal}${color1}${time %H}${color3}:${color1}${time %M}${color3}:${color4}${time %S}
 ${voffset -65}${offset 160}${font Ubuntu:size=10,weight:normal}${color1}Uptime: ${color5}$uptime
 
