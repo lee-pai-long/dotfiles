@@ -20,6 +20,7 @@ alias aga='apt-get autoremove'
 alias acp='apt-cache policy '
 
 # ----------- sudo ---------------------------------------------------------------------
+alias sudo='sudo ' # Use sudo with user bash aliases.
 alias s='sudo '
 alias fuck='sudo $(history -p \!\!)'
 
