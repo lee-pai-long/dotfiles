@@ -30,12 +30,12 @@ help: ## Show this message.
 
 link: ## Create symlink for all files in $HOME.
 
-	@for f in `find $(FIND_PATTERN) -exec readlink -f {} \;`; \
+	@for f in $$(find $(FIND_PATTERN) -exec readlink -f {} \;); \
 		do ln -sfT $$f $(USER_HOME)/$$(basename $$f); \
 	done
 
 clean: ## Remove  all symlink from $HOME.
 
-	@for f in `find $(FIND_PATTERN) -exec basename {} \;`; \
+	@for f in $$(find $(FIND_PATTERN) -exec basename {} \;); \
 		do rm -rf $(USER_HOME)/$$f; \
 	done
