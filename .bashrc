@@ -4,22 +4,34 @@
 # ----------------------- color settings -----------------------------------------------
 #show color by for structure:
 # $ for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done
-or="\e[38;05;202m"
-wh="\e[38;05;15m"
-gr="\e[38;05;41m"
-bl="\e[38;05;33m"
-ye="\e[38;05;11m"
-re="\e[38;05;9m"
+o="\e[38;05;202m"
+w="\e[38;05;15m"
+g="\e[38;05;41m"
+b="\e[38;05;33m"
+y="\e[38;05;11m"
+r="\e[38;05;9m"
+p="\e[38;05;135m"
 
 # ----------------------- prompt settings ----------------------------------------------
 # (venv)[11:07:45] user @ host : /path/ (git branch)
 # $ command
 # virtualenv is added by the bash function venv_prompt.
-ORIGINAL_PROMPT="$or[\t] $gr\u $wh@ $bl\H$wh: $ye\w$wh\n\$ "
-if [ -n "$(type -t __git_ps1)" ]; then
-    ORIGINAL_PROMPT="$or[\t] $gr\u $wh@ $bl\H$wh: $ye\w$wh\$(__git_ps1)\n\$ "
-fi
-PS1=$ORIGINAL_PROMPT
+function prompter {
+    export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+    ORIGINAL_PROMPT="$g\u$w at $b\H$w in $y\w"
+    GIT_PROMPT='$(__git_ps1 "$w on $r(%s)")'
+    VENV_PROMPT="$w as $p(${VIRTUAL_ENV##*/})"
+    if [ -n "$(type -t __git_ps1)" ]; then
+        if [[ $VIRTUAL_ENV != "" ]] && [[ $PS1 != "$WANTED_PROMPT" ]]; then
+            PROMPT="$ORIGINAL_PROMPT""$VENV_PROMPT""$GIT_PROMPT"
+        else
+            PROMPT="$ORIGINAL_PROMPT""$GIT_PROMPT"
+        fi
+    fi
+    PS1="$PROMPT""$w at $o[\t]$w\n\$ "
+}
+export -f prompter
+export PROMPT_COMMAND='prompter'
 
 # ---------------------- history settings ----------------------------------------------
 # don't put duplicate lines or lines starting with space in the history.
@@ -67,7 +79,7 @@ if [ -d "$BASH_FUNC_DIR" ]; then
     # Bash shell executes this function just before displaying the PS1 variable.
     # venv-prompt is loaded from a bash function.
     # BUG: Doesn't always work...
-    export PROMPT_COMMAND='venv-prompt'
+    # export PROMPT_COMMAND='venv-prompt'
 fi
 
 LOCAL_BASHRC="$HOME/.local.bashrc"
@@ -93,4 +105,4 @@ if [ -d "$BASH_COMPLETION_DIR" ]; then
 fi
 
 # Allow git completion with git alias
-__git_complete g __git_main
+declare -f __git_complete &> /dev/null && __git_complete g __git_main
