@@ -3,3 +3,4 @@
 .perlcriticrc
 .vagrant
 _Deparsed_XSubs.pm
+*.iml
