@@ -53,11 +53,12 @@
 	a = add
 	aa = add --all
 	ci = commit
-	ca = commit -a
 	cm = commit -m
-	cmn = commit --no-verify
-	cmd = commit --amend
-	cmdn = commit --amend --no-verify
+	cmnv = commit --no-verify
+	cma = commit --amend
+	cmane = commit --amend --no-edit
+	cmanv = commit --amend --no-verify
+	cmanev = commit --amend --no-edit --no-verify
 	d = diff
 	ps = push
 	pl = pull
