@@ -26,7 +26,7 @@ alias fuck='sudo $(history -p \!\!)'
 
 # ------ linux mint --------------------------------------------------------------------
 alias cinnamon_restart='killall cinnamon && export DISPLAY=:0.0 && cinnamon --replace &'
-
+alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove'
 
 # --------- cd -------------------------------------------------------------------------
 alias ....='cd ../..'
