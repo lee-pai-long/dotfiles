@@ -61,10 +61,11 @@
 	canv = commit --amend --no-verify
 	canev = commit --amend --no-edit --no-verify
 	d = diff
+	# FIXME: git: '/usr/local/bin/grc' is not a git command. See 'git --help'.
 	ps = push
-	psnv = push --no-verify
-	psf = push -f
-	psfnv = push -f --no-verify
+	pnv = push --no-verify
+	pf = push -f
+	pfnv = push -f --no-verify
 	pl = pull
 	ss = status
 	sb = status -sb

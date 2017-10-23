@@ -102,19 +102,20 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set softtabstop=2
     \ set shiftwidth=2
 
+# FIXME: Doesn't work with pyenv-virtualenv
 " python with virtualenv support
 " This determines if you are running inside a virtualenv,
 " and then switches to that specific virtualenv
 " and sets up your system path
 " so that YouCompleteMe will find the appropriate site packages
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-   project_base_dir = os.environ['VIRTUAL_ENV']
-   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-   execfile(activate_this, dict(__file__=activate_this))
-EOF
+" py << EOF
+" import os
+" import sys
+" if 'VIRTUAL_ENV' in os.environ:
+"    project_base_dir = os.environ['VIRTUAL_ENV']
+"    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"    execfile(activate_this, dict(__file__=activate_this))
+" EOF
 
 " make python code look pretty
 let python_highlight_all=1
