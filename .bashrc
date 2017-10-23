@@ -10,7 +10,7 @@ g="\e[38;05;41m"
 b="\e[38;05;33m"
 y="\e[38;05;11m"
 r="\e[38;05;9m"
-p="\e[38;05;135m"
+c="\e[38;05;14m"
 
 # ----------------------- prompt settings ----------------------------------------------
 # (venv)[11:07:45] user @ host : /path/ (git branch)
@@ -20,7 +20,7 @@ function prompter {
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
     ORIGINAL_PROMPT="$g\u$w at $b\H$w in $y\w"
     GIT_PROMPT='$(__git_ps1 "$w on $r(%s)")'
-    VENV_PROMPT="$w as $p(${VIRTUAL_ENV##*/})"
+    VENV_PROMPT="$w as $c(${VIRTUAL_ENV##*/})"
     if [ -n "$(type -t __git_ps1)" ]; then
         if [[ $VIRTUAL_ENV != "" ]] && [[ $PS1 != "$WANTED_PROMPT" ]]; then
             PROMPT="$ORIGINAL_PROMPT""$VENV_PROMPT""$GIT_PROMPT"
