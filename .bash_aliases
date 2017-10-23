@@ -70,3 +70,11 @@ alias diff='colordiff '
 
 # --------- Neovim ---------------------------------------------------------------------
 alias nvm='nvim '
+
+
+# --------- Python ---------------------------------------------------------------------
+alias ipy='~/.pyenv/versions/default/bin/ipython'
+
+
+# --------- Make
+alias mk='make '
