@@ -13,20 +13,22 @@ r="\e[38;05;9m"
 c="\e[38;05;14m"
 
 # ----------------------- prompt settings ----------------------------------------------
-# (venv)[11:07:45] user @ host : /path/ (git branch)
+# user at host in path as (venv) on (git branch) at [time]
 # $ command
-# virtualenv is added by the bash function venv_prompt.
 function prompter {
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
     ORIGINAL_PROMPT="$g\u$w at $b\H$w in $y\w"
     GIT_PROMPT='$(__git_ps1 "$w on $r(%s)")'
     VENV_PROMPT="$w as $c(${VIRTUAL_ENV##*/})"
+    WANTED_PROMPT="$ORIGINAL_PROMPT""$VENV_PROMPT""$GIT_PROMPT"
     if [ -n "$(type -t __git_ps1)" ]; then
         if [[ $VIRTUAL_ENV != "" ]] && [[ $PS1 != "$WANTED_PROMPT" ]]; then
-            PROMPT="$ORIGINAL_PROMPT""$VENV_PROMPT""$GIT_PROMPT"
+            PROMPT="$WANTED_PROMPT"
         else
             PROMPT="$ORIGINAL_PROMPT""$GIT_PROMPT"
         fi
+    else
+        PROMPT="$ORIGINAL_PROMPT"
     fi
     PS1="$PROMPT""$w at $o[\t]$w\n\$ "
 }
