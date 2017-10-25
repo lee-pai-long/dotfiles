@@ -102,7 +102,7 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set softtabstop=2
     \ set shiftwidth=2
 
-# FIXME: Doesn't work with pyenv-virtualenv
+" FIXME: Doesn't work with pyenv-virtualenv
 " python with virtualenv support
 " This determines if you are running inside a virtualenv,
 " and then switches to that specific virtualenv
