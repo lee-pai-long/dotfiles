@@ -22,7 +22,7 @@ alias acp='apt-cache policy '
 # ----------- sudo ---------------------------------------------------------------------
 alias sudo='sudo ' # Use sudo with user bash aliases.
 alias s='sudo '
-alias fuck='sudo $(history -p \!\!)'
+alias fok='sudo $(history -p \!\!)'
 
 # ------ linux mint --------------------------------------------------------------------
 alias cinnamon_restart='killall cinnamon && export DISPLAY=:0.0 && cinnamon --replace &'
