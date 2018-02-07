@@ -69,7 +69,7 @@
 	pl = pull
 	ss = status
 	sb = status -sb
-	sv = stash save --keep-index
+	sv = stash push --keep-index
 	sp = stash pop
 	mt = mergetool
 	co = checkout
