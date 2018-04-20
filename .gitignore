@@ -4,3 +4,6 @@
 .vagrant
 _Deparsed_XSubs.pm
 *.iml
+cpanfile*
+local/
+.config
