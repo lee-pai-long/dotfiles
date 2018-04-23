@@ -52,6 +52,7 @@
 [alias]
 	a = add
 	aa = add --all
+	al = config --get-regexp alias
 	ci = commit
 	cm = commit -m
 	cnv = commit --no-verify
