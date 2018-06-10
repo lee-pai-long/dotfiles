@@ -77,4 +77,4 @@ alias ipy='~/.pyenv/versions/default/bin/ipython'
 
 
 # --------- Make
-alias mk='make '
+alias m='make '
