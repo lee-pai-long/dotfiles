@@ -44,7 +44,7 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 
 " Auto-complete for python
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " Syntax Checking/Highlighting
 Plugin 'scrooloose/syntastic'
@@ -136,7 +136,7 @@ au BufRead,BufNewFile *.sls set tabstop=2 expandtab
 let g:ycm_autoclose_preview_window_after_completion=1
 
 " defines a shortcut for goto definition
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " NERDTree settings -----------------------------------------------------------
 "ignore .pyc files in NERDTree
