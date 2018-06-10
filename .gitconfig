@@ -62,6 +62,7 @@
 	canv = commit --amend --no-verify
 	canev = commit --amend --no-edit --no-verify
 	d = diff
+	fw = flow
 	# FIXME: git: '/usr/local/bin/grc' is not a git command. See 'git --help'.
 	ps = push
 	pnv = push --no-verify
@@ -78,3 +79,8 @@
 	lg = log --graph --decorate --pretty=custom
 	tags = tag -l
 	this = !git init && git add . && git commit -m \"Initial commit.\"
+    # FIXME: Don't work...
+	# fix = "!f() { TARGET=$(git rev-parse \"$1\"); git commit --fixup=$TARGET ${@:2} && EDITOR=true git rebase -i --autostash --autosquash $TARGET^; }; f"
+	bl = blame
+	cp = cherry-pick
+	sh = show
