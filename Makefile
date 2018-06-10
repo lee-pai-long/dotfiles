@@ -28,13 +28,13 @@ help: ## Show this message.
 		'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / \
 		{printf "$(CYAN)%-8s$(WHITE) : %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-link: ## Create symlink for all files in $HOME.
+link: ## Create symlinks for all files in $HOME.
 
 	@for f in $$(find $(FIND_PATTERN) -exec readlink -f {} \;); \
 		do ln -sfT $$f $(USER_HOME)/$$(basename $$f); \
 	done
 
-clean: ## Remove  all symlink from $HOME.
+clean: ## Remove all symlinks from $HOME.
 
 	@for f in $$(find $(FIND_PATTERN) -exec basename {} \;); \
 		do rm -rf $(USER_HOME)/$$f; \
