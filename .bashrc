@@ -101,7 +101,7 @@ if [ -f "$LOCAL_BASHRC" ]; then
 fi
 
 # set PATH so it includes user's private bin if it exists
-USER_BIN="$HOME/.bin"
+USER_BIN="$HOME/bin"
 if [ -d "$USER_BIN" ]; then
     export PATH="$USER_BIN:$PATH"
 fi
@@ -113,9 +113,13 @@ export EDITOR="$VISUAL"
 BASH_COMPLETION_DIR="$HOME/.bash_completion.d"
 if [ -d "$BASH_COMPLETION_DIR" ]; then
     for completion in $BASH_COMPLETION_DIR/*; do
-        source "$completion"
+		source "$completion"
     done
 fi
 
-# Allow git completion with git alias
-declare -f __git_complete &> /dev/null && __git_complete g __git_main
+GIT_COMPLETION="/usr/share/bash-completion/completions/git"
+if [ -f $GIT_COMPLETION ]; then
+   source $GIT_COMPLETION
+   __git_complete g __git_main
+fi
+
