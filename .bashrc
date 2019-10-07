@@ -4,22 +4,29 @@
 # ----------------------- color settings -----------------------------------------------
 #show color by for structure:
 # $ for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done
-o="\e[38;05;202m"
-w="\e[38;05;15m"
-g="\e[38;05;41m"
-b="\e[38;05;33m"
-y="\e[38;05;11m"
-r="\e[38;05;9m"
-c="\e[38;05;14m"
+orange="\e[38;05;202m"
+white="\e[38;05;15m"
+green="\e[38;05;41m"
+blue="\e[38;05;33m"
+yellow="\e[38;05;11m"
+red="\e[38;05;9m"
+cyan="\e[38;05;14m"
 
 # ----------------------- prompt settings ----------------------------------------------
+
 # user at host in path as (venv) on (git branch) at [time]
 # $ command
 function prompter {
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-    ORIGINAL_PROMPT="$g\u$w at $b\H$w in $y\w"
-    GIT_PROMPT='$(__git_ps1 "$w on $r(%s)")'
-    VENV_PROMPT="$w as $c(${VIRTUAL_ENV##*/})"
+    ORIGINAL_PROMPT="$green\u$white at $blue\H$white in $yellow\w"
+	GIT_PROMPT_SH="$HOME/.git-prompt.sh"
+	if [[ -f "$GIT_PROMPT_SH" ]]; then
+		source "$GIT_PROMPT_SH"
+		GIT_PROMPT=$(__git_ps1 "$white on $red%s")
+	else
+		GIT_PROMPT=""
+	fi
+    VENV_PROMPT="$white as $cyan${VIRTUAL_ENV##*/}"
     WANTED_PROMPT="$ORIGINAL_PROMPT""$VENV_PROMPT""$GIT_PROMPT"
     if [ -n "$(type -t __git_ps1)" ]; then
         if [[ $VIRTUAL_ENV != "" ]] && [[ $PS1 != "$WANTED_PROMPT" ]]; then
@@ -30,7 +37,11 @@ function prompter {
     else
         PROMPT="$ORIGINAL_PROMPT"
     fi
-    PS1="$PROMPT""$w at $o[\t]$w\n\$ "
+    PS1="$PROMPT""$white at $orange\t$white\n\$ "
+	# TODO: Check if this works properly,
+	# from https://superuser.com/a/570019/642267
+	# bashrc_sourced=$(stat -c %Y ~/.bashrc)
+	# test $(stat -c %Y ~/.bashrc) -ne $bashrc_sourced && source ~/.bashrc
 }
 export -f prompter
 export PROMPT_COMMAND='prompter'
