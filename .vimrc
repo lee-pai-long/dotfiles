@@ -64,11 +64,6 @@ Plugin 'kien/ctrlp.vim'
 "to perform basic git commands without leaving vim
 Plugin 'tpope/vim-fugitive'
 
-" Powerline : status bar that displays things
-" like the current virtualenv, git branch, files being edited, and much more.
-" doc : http://powerline.readthedocs.org/en/latest/
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-
 " Syntax highlighting, matching rules and mappings for Markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
