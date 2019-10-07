@@ -47,6 +47,7 @@
 	# IDEA: Consider adding diff between author date and committer data.
 	custom = "%C(yellow)%h%Creset %Cblue(%an)%Creset \
 - %ad %Cgreen(%ar)%Creset -%C(yellow)%d%Creset %s"
+    reflog = "%C(yellow)%h%Creset %Cblue(%gn)%Creset - %ad %Cgreen(%ar)%Creset - %C(yellow)%gd%Creset %gs"
 [alias]
 	a = add
 	aa = add --all
@@ -75,6 +76,7 @@
 	co = checkout
 	cb = checkout -b
 	lg = log --graph --decorate --pretty=custom
+	rg = log --walk-reflogs --pretty=reflog
 	tags = tag -l
 	this = !git init && git add . && git commit -m \"Initial commit.\"
     # FIXME: Don't work...
