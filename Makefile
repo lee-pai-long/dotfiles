@@ -23,13 +23,27 @@ TAGS = TODO|FIXME|CHANGED|XXX|REVIEW|BUG|REFACTOR|IDEA|NOTE|WARNING
 # -----
 
 .PHONY: help
-help: ## Show this message.
+help: help-max-length ## Show this message.
 
-	@echo "usage: make [task]" \
-	&& echo "available tasks:" \
-	&& awk \
-		'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / \
-		{printf "$(CYAN)%-8s$(WHITE) : %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+	@echo -e "Usage: make [task]\n" \
+	&& echo "Available tasks:" \
+	&& awk ' \
+			BEGIN {FS = ":.*?## "} \
+			/^[a-zA-Z_-]+:.*?## / \
+			{printf "$(CYAN)%-$(HELP_MAX_LENGTH)s$(WHITE) : %s\n", $$1, $$2} \
+	   ' $(MAKEFILE_LIST)
+
+.PHONY: help-max-length
+help-max-length: # Return the length of the longest explosed(commented with ##) rule name.
+
+	@$(eval HELP_MAX_LENGTH := $(shell \
+		awk ' \
+			BEGIN {FS = ":.*?## "} \
+			/^[a-zA-Z_-]+:.*?## / \
+			{print length($$1)} \
+		' $(MAKEFILE_LIST) \
+		| awk -v max=0 '{if($$1>max){max=$$1}}END{print max}' \
+	))
 
 .PHONY: link
 link: ## Create symlinks for all files in $HOME.
