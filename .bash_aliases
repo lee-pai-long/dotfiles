@@ -69,7 +69,8 @@ alias g='git '
 alias diff='colordiff '
 
 # --------- Neovim ---------------------------------------------------------------------
-alias nvm='nvim '
+# Colide with nvm(node version manager)
+# alias nvm='nvim '
 
 
 # --------- Python ---------------------------------------------------------------------
