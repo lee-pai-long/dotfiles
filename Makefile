@@ -22,6 +22,7 @@ TAGS = TODO|FIXME|CHANGED|XXX|REVIEW|BUG|REFACTOR|IDEA|NOTE|WARNING
 # Tasks
 # -----
 
+.PHONY: help
 help: ## Show this message.
 
 	@echo "usage: make [task]" \
@@ -30,12 +31,14 @@ help: ## Show this message.
 		'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / \
 		{printf "$(CYAN)%-8s$(WHITE) : %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
+.PHONY: link
 link: ## Create symlinks for all files in $HOME.
 
 	@for f in $$(find $(FIND_PATTERN) -exec readlink -f {} \;); \
 		do ln -sfT $$f $(USER_HOME)/$$(basename $$f); \
 	done
 
+.PHONY: clean
 clean: ## Remove all symlinks from $HOME.
 
 	@for f in $$(find $(FIND_PATTERN) -exec basename {} \;); \
