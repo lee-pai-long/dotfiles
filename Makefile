@@ -17,6 +17,8 @@ CYAN   = \033[36m
 FIND_PATTERN = . ! -path "./.git" ! -path "." -name ".*"
 USER_HOME ?= $$HOME
 
+TAGS = TODO|FIXME|CHANGED|XXX|REVIEW|BUG|REFACTOR|IDEA|NOTE|WARNING
+
 # Tasks
 # -----
 
@@ -39,3 +41,42 @@ clean: ## Remove all symlinks from $HOME.
 	@for f in $$(find $(FIND_PATTERN) -exec basename {} \;); \
 		do rm -rf $(USER_HOME)/$$f; \
 	done
+
+.PHONY: todo-max-length
+todo-max-length:  # Return the length of the longest tag name.
+
+	@$(eval TODO_MAX_LENGTH := $(shell \
+		echo '$(TAGS)' \
+		| sed -e 's/|/\n/g' \
+		| sort -u \
+		| awk '{print length}' \
+		| sort -nr \
+		| head -1 \
+	))
+
+.PHONY: todo
+todo: todo-max-length ## Show todos.
+
+	@find $(code) \
+		-type f \
+		-not -path "./.git/*" \
+		-exec \
+			awk '/[ ]($(TAGS)):/ \
+				{ \
+					gsub("# ", "", $$0); \
+					gsub("// ", "", $$0); \
+					gsub("<!--", "", $$0); gsub("-->", "", $$0); \
+					gsub("\"", "", $$0); \
+					gsub(/\.\./, "", $$0); \
+					gsub(/^[ \t]+/, "", $$0); \
+					gsub(/:/, "", $$0); \
+					gsub(/\.\//, "", FILENAME); \
+					TYPE = $$1; $$1 = ""; \
+					MESSAGE = $$0; \
+					LINE = NR; \
+					printf \
+						"$(CYAN)%-$(TODO_MAX_LENGTH)s|$(WHITE):"\
+						"%s|: $(CYAN)%s$(WHITE)($(BLUE)%s$(WHITE))\n" \
+						, TYPE, MESSAGE, FILENAME, LINE \
+				}' \
+		{} \; | column -s '|' -t
