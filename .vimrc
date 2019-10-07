@@ -72,16 +72,6 @@ Plugin 'plasticboy/vim-markdown'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-
-" a bit of logic to define which scheme to use based upon the VIM mode
-if has('gui_running')
-	set background=dark
-	colorscheme solarized
-	call togglebg#map("<F5>")
-else
-	colorscheme zenburn
-endif
-
 " Python settings ------------------------------------------------------
 " proper PEP8 indentation
 au BufNewFile,BufRead *.py set tabstop=4
