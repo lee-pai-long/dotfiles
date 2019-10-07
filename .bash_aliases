@@ -79,3 +79,15 @@ alias ipy='~/.pyenv/versions/default/bin/ipython'
 
 # --------- Make
 alias m='make '
+
+# ---- Pyenv
+# FIXME: It seems to use the previously visited direrectory as PWD instead of the current one...
+alias pav="pyenv activate $(basename ${PWD})"
+alias plv="pyenv virtualenvs | cut -d ' ' -f3 | grep -v '^[0-9]'"
+alias pli="pyenv versions --bare --skip-aliases | cut -d'/' -f1 | uniq"
+
+
+# ---- Docker ---
+# NOTE: This will override dc a.k.a GNU desk calculator,
+#		I never use it so I don't case but still it should be known.
+alias dc="docker-compose "
