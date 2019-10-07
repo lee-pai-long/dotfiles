@@ -44,6 +44,7 @@
 [log]
 	date = local
 [pretty]
+	# IDEA: Consider adding diff between author date and committer data.
 	custom = "%C(yellow)%h%Creset %Cblue(%an)%Creset \
 - %ad %Cgreen(%ar)%Creset -%C(yellow)%d%Creset %s"
 [alias]
