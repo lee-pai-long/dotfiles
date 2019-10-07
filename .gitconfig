@@ -68,8 +68,7 @@
 	pf = push -f
 	pfnv = push -f --no-verify
 	pl = pull
-	ss = status
-	sb = status -sb
+	ss = status --short --branch --show-stash
 	sv = stash push --keep-index
 	sp = stash pop
 	mt = mergetool
