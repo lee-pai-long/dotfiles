@@ -7,6 +7,7 @@
 ##     * -h  : Show this help.
 ##     * First argument is the wanted alias name
 ##     * Second argument is the command (enclose with "")
+# FIXME: Help is buggy...
 function add_alias() {
 
     # BASH_SOURCE is an array containing the current execution stack.
