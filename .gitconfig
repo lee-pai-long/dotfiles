@@ -93,3 +93,13 @@
 	}; f"
 	pj = project
 	cf = commit --fixup
+	# https://stackoverflow.com/a/58543046/3775614
+	refresh = "!f() { \
+		git fetch \
+		&& git diff origin/$1 $1 \
+		|| { \
+			git rebase origin/$1 $1 \
+		    && git checkout - \
+		;} \
+	;;}; f"
+	rf = refresh
