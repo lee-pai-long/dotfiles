@@ -18,7 +18,7 @@ cyan="\e[38;05;14m"
 # $ command
 function prompter {
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-    ORIGINAL_PROMPT="$green\u$white at $blue\H$white in $yellow\w"
+    ORIGINAL_PROMPT="$green\u$white on $blue\H$white in $yellow\w"
 	GIT_PROMPT_SH="$HOME/.git-prompt.sh"
 	if [[ -f "$GIT_PROMPT_SH" ]]; then
 		source "$GIT_PROMPT_SH"
