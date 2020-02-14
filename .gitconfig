@@ -54,6 +54,7 @@
 	al = config --get-regexp alias
 	bl = blame
 	bn = branch-name
+	br = branch
 	branch-name = rev-parse --abbrev-ref HEAD
 	ca = commit --amend
 	cane = commit --amend --no-edit
