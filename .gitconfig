@@ -52,47 +52,35 @@
 	a = add
 	aa = add --all
 	al = config --get-regexp alias
-	ci = commit
-	cm = commit -m
-	cnv = commit --no-verify
-	cmnv = commit --no-verify -m
+	bl = blame
+	bn = branch-name
+	branch-name = rev-parse --abbrev-ref HEAD
 	ca = commit --amend
 	cane = commit --amend --no-edit
 	canv = commit --amend --no-verify
 	canev = commit --amend --no-edit --no-verify
+	cb = checkout -b
+	cf = commit --fixup
+	ci = commit
+	cm = commit -m
+	cmnv = commit --no-verify -m
+	cnv = commit --no-verify
+	co = checkout
+	cp = cherry-pick
 	d = diff
 	fw = flow
-	# FIXME: git: '/usr/local/bin/grc' is not a git command. See 'git --help'.
-	ps = push
-	pnv = push --no-verify
+	mt = mergetool
+	lg = log --graph --decorate --pretty=custom
 	pf = push -f
 	pfnv = push -f --no-verify
+	pj = project
 	pl = pull
-	ss = status --short --branch --show-stash
-	sv = stash push --keep-index
-	sp = stash pop
-	mt = mergetool
-	co = checkout
-	cb = checkout -b
-	lg = log --graph --decorate --pretty=custom
-	rg = log --walk-reflogs --pretty=reflog
-	tags = tag -l
-	this = !git init && git add . && git commit -m \"Initial commit.\"
-    # FIXME: Don't work...
-	# fix = "!f() { TARGET=$(git rev-parse \"$1\"); git commit --fixup=$TARGET ${@:2} && EDITOR=true git rebase -i --autostash --autosquash $TARGET^; }; f"
-	bl = blame
-	cp = cherry-pick
-	sh = show
-	sm = submodule
-	ri = rebase -i
-	branch-name = rev-parse --abbrev-ref HEAD
-	bn = branch-name
-	# https://stackoverflow.com/a/15716016/3775614
+	pnv = push --no-verify
 	project = "!f() { \
 		basename $(git rev-parse --show-toplevel); \
 	}; f"
-	pj = project
-	cf = commit --fixup
+	# FIXME: git: '/usr/local/bin/grc' is not a git command. See 'git --help'.
+	ps = push
 	# https://stackoverflow.com/a/58543046/3775614
 	refresh = "!f() { \
 		git fetch \
@@ -103,3 +91,15 @@
 		;} \
 	;;}; f"
 	rf = refresh
+	ri = rebase -i
+	rg = log --walk-reflogs --pretty=reflog
+	sh = show
+	sm = submodule
+	sp = stash pop
+	ss = status --short --branch --show-stash
+	sv = stash push --keep-index
+	tags = tag -l
+	this = !git init && git add . && git commit -m \"Initial commit.\"
+    # FIXME: Don't work...
+	# fix = "!f() { TARGET=$(git rev-parse \"$1\"); git commit --fixup=$TARGET ${@:2} && EDITOR=true git rebase -i --autostash --autosquash $TARGET^; }; f"
+	# https://stackoverflow.com/a/15716016/3775614
