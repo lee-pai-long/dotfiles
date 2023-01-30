@@ -3,10 +3,6 @@
 set nocompatible              " required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
 set encoding=utf-8
 
 " Enable folding
@@ -22,55 +18,6 @@ set shiftwidth=4
 
 " Enable folding with the spacebar
 nnoremap <space> za
-
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
-
-" Color Schemes
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
-
-" The initial command, set foldmethod=indent, creates folds based upon line indents.
-" This however often creates more folds that you wanted
-" SimpylFold rectify that
-Plugin 'tmhedberg/SimpylFold'
-
-" Autoindent conforming to PEP8 standards
-Plugin 'vim-scripts/indentpython.vim'
-
-" Auto-complete for python
-" Plugin 'Valloric/YouCompleteMe'
-
-" Syntax Checking/Highlighting
-Plugin 'scrooloose/syntastic'
-
-" PEP8 syntax checking
-Plugin 'nvie/vim-flake8'
-
-" proper file tree
-Plugin 'scrooloose/nerdtree'
-
-" use tabs
-Plugin 'jistr/vim-nerdtree-tabs'
-
-" to search for basically anything from VIM
-Plugin 'kien/ctrlp.vim'
-
-"to perform basic git commands without leaving vim
-Plugin 'tpope/vim-fugitive'
-
-" Syntax highlighting, matching rules and mappings for Markdown
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
 
 " Python settings ------------------------------------------------------
 " proper PEP8 indentation
