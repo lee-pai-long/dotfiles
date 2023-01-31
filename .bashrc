@@ -123,3 +123,7 @@ if [ -f $GIT_COMPLETION ]; then
    __git_complete g __git_main
 fi
 
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
