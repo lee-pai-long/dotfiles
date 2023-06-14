@@ -14,7 +14,7 @@ YELLOW = \033[33m
 BLUE   = \033[34m
 CYAN   = \033[36m
 
-FIND_PATTERN = . ! -path "./.git" ! -path "." -name ".*"
+FIND_PATTERN = . ! -path "./.git" ! -path "." -name ".*" ! -path "./.config"
 USER_HOME ?= $$HOME
 
 TAGS = TODO|FIXME|CHANGED|XXX|REVIEW|BUG|REFACTOR|IDEA|NOTE|WARNING
@@ -97,3 +97,10 @@ todo: todo-max-length ## Show todos.
 						, TYPE, MESSAGE, FILENAME, LINE \
 				}' \
 		{} \; | column -s '|' -t
+
+.PHONY: config
+config: ## Copy content of repo's .config directory in $HOME/.config
+
+	@for config in $$(ls "./.config"); do \
+		cp -r "./.config/$$config" "$(USER_HOME)/.config"; \
+	done
