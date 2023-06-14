@@ -48,15 +48,15 @@ help-max-length: # Return the length of the longest explosed(commented with ##) 
 .PHONY: link
 link: ## Create symlinks for all files in $HOME.
 
-	@for f in $$(find $(FIND_PATTERN) -exec readlink -f {} \;); \
-		do ln -sfT $$f $(USER_HOME)/$$(basename $$f); \
+	@for f in $$(find $(FIND_PATTERN) -exec readlink -f {} \;); do \
+		ln -sfT $$f $(USER_HOME)/$$(basename $$f); \
 	done
 
 .PHONY: clean
 clean: ## Remove all symlinks from $HOME.
 
-	@for f in $$(find $(FIND_PATTERN) -exec basename {} \;); \
-		do rm -rf $(USER_HOME)/$$f; \
+	@for f in $$(find $(FIND_PATTERN) -exec basename {} \;); do \
+		rm -rf $(USER_HOME)/$$f; \
 	done
 
 .PHONY: todo-max-length
