@@ -101,7 +101,7 @@ if [ -f "$LOCAL_BASHRC" ]; then
 fi
 
 # set PATH so it includes user's private bin if it exists
-USER_BIN="$HOME/bin"
+USER_BIN="$HOME/.bin"
 if [ -d "$USER_BIN" ]; then
     export PATH="$USER_BIN:$PATH"
 fi
